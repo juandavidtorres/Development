@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RegistrarVentaEstacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VentaEds" type="tns:Venta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Venta">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Recibo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdFormaPago" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaHora" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTurno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdManguera" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="HoraInicio" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="HoraFin" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LecturaInicial" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="LecturaFinal" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Precio" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Iva" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AbonoCredito" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCliente" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Descuento" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Placa" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdProducto" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodEstacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VentasFormaPago" type="tns:ArrayOfVentaFormaPago" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdUnidadMedida" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdHistoricoPrecio" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rom" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdIsla" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCara" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaProximoMantenimiento" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdSurtidor" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="RUTconductor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Kilometraje" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdVale" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCupon" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="NroFactura" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ComprobantePrepago" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumeroTurno" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipoEnvase" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoControl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NroAutorizacion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorCambioPrecio" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="EsDescuentoClienteCredito" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVentaFormaPago">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VentaFormaPago" nillable="true" type="tns:VentaFormaPago" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="VentaFormaPago">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdMedioPago" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegistrarVentaEstacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarVentaEstacionResult" type="tns:RespuestaCDC" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaCDC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MensajeError" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EsProcesado" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCampoBD" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AutorizarVentaGerenciamiento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AutorizacionEds" type="tns:AutorizacionGerenciamiento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AutorizacionGerenciamiento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Placa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Identificacion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Precio" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodEstacion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdProducto" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Kilometraje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RUCConductor" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EsPrepago" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="TarjetaPrepago" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AutorizarVentaGerenciamientoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AutorizarVentaGerenciamientoResult" type="tns:RespuestaAutorizacionGerenciamiento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaAutorizacionGerenciamiento">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdAutorizacion" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdFormaPago" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorAutorizado" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SaldoDisponible" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="MensajeError" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EsAutorizado" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ConsumoMes" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="LecturaOdometro" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroContratoPrepago" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaContratoPrepago" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConfirmarVentaGerenciamiento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VentaGerenciaEds" type="tns:VentaGerencia" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VentaGerencia">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdAutorizacionCDC" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodEstacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Kilometraje" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReciboEds" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="TarjetaPrepago" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EsPrepago" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConfirmarVentaGerenciamientoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmarVentaGerenciamientoResult" type="tns:RespuestaCDC" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarTurnoEstacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TurnoEds" type="tns:Turno" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Turno">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdTurno" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodEstacion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdEmpleado" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaApertura" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaCierre" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Productos" type="tns:ArrayOfProducto" />
+          <s:element minOccurs="0" maxOccurs="1" name="LecturasManguera" type="tns:ArrayOfLecturaManguera" />
+          <s:element minOccurs="1" maxOccurs="1" name="Numeroturno" type="s:short" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfProducto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Producto" nillable="true" type="tns:Producto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Producto">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdProducto" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Precio" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfLecturaManguera">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LecturaManguera" nillable="true" type="tns:LecturaManguera" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LecturaManguera">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdManguera" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="LecturaInicial" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="LecturaFinal" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegistrarTurnoEstacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarTurnoEstacionResult" type="tns:RespuestaCDC" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarVentaCredito">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VentaCredito" type="tns:VentaCredito" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VentaCredito">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodEstacion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Recibo" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Credito" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Porcentaje" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipoRecaudo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorTipoRecaudo" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegistrarVentaCreditoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarVentaCreditoResult" type="tns:RespuestaCDC" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarInformacionVentaCredito">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Placa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarInformacionVentaCreditoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarInformacionVentaCreditoResult" type="tns:RespuestaVentaCredito" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaVentaCredito">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CopagoRestante" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CopagoAcumulado" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="MensajeError" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EsProcesado" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RecuperarMetaMensual">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Placa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarMetaMensualResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarMetaMensualResult" type="tns:MentaMensual" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MentaMensual">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MensajeError" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EsProcesado" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MetaMensual" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="AcumuladoMes" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RecuperarEstadoChipMadre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ROM" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarEstadoChipMadreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarEstadoChipMadreResult" type="tns:EstadoChipMadre" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EstadoChipMadre">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MensajeError" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EsProcesado" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="EstadoChipMadreEstacion" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AutorizarVentaTarjeta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tarjeta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutorizarVentaTarjetaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AutorizarVentaTarjetaResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Respuesta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Placa" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Saldo" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="EsProcesado" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MovimientosPrepago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NoTarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Puerto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovimientosPrepagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MovimientosPrepagoResult" type="tns:ArrayOfMovimiento" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMovimiento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Movimiento" nillable="true" type="tns:Movimiento" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Movimiento">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FechaHora" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Valor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RecuperarSaldoTarjeta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NoTarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Puerto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarSaldoTarjetaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarSaldoTarjetaResult" type="tns:RespuestaSaldo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaSaldo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Saldo" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Placa" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RegistrarVentaEstacionSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarVentaEstacion" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarVentaEstacionSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarVentaEstacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarVentaGerenciamientoSoapIn">
+    <wsdl:part name="parameters" element="tns:AutorizarVentaGerenciamiento" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarVentaGerenciamientoSoapOut">
+    <wsdl:part name="parameters" element="tns:AutorizarVentaGerenciamientoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarVentaGerenciamientoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmarVentaGerenciamiento" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarVentaGerenciamientoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmarVentaGerenciamientoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarTurnoEstacionSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarTurnoEstacion" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarTurnoEstacionSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarTurnoEstacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarVentaCreditoSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarVentaCredito" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarVentaCreditoSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarVentaCreditoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInformacionVentaCreditoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarInformacionVentaCredito" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInformacionVentaCreditoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarInformacionVentaCreditoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarMetaMensualSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarMetaMensual" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarMetaMensualSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarMetaMensualResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarEstadoChipMadreSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarEstadoChipMadre" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarEstadoChipMadreSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarEstadoChipMadreResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarVentaTarjetaSoapIn">
+    <wsdl:part name="parameters" element="tns:AutorizarVentaTarjeta" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarVentaTarjetaSoapOut">
+    <wsdl:part name="parameters" element="tns:AutorizarVentaTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="MovimientosPrepagoSoapIn">
+    <wsdl:part name="parameters" element="tns:MovimientosPrepago" />
+  </wsdl:message>
+  <wsdl:message name="MovimientosPrepagoSoapOut">
+    <wsdl:part name="parameters" element="tns:MovimientosPrepagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarSaldoTarjetaSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarSaldoTarjeta" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarSaldoTarjetaSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarSaldoTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ComunicacionSoap">
+    <wsdl:operation name="RegistrarVentaEstacion">
+      <wsdl:input message="tns:RegistrarVentaEstacionSoapIn" />
+      <wsdl:output message="tns:RegistrarVentaEstacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarVentaGerenciamiento">
+      <wsdl:input message="tns:AutorizarVentaGerenciamientoSoapIn" />
+      <wsdl:output message="tns:AutorizarVentaGerenciamientoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarVentaGerenciamiento">
+      <wsdl:input message="tns:ConfirmarVentaGerenciamientoSoapIn" />
+      <wsdl:output message="tns:ConfirmarVentaGerenciamientoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarTurnoEstacion">
+      <wsdl:input message="tns:RegistrarTurnoEstacionSoapIn" />
+      <wsdl:output message="tns:RegistrarTurnoEstacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarVentaCredito">
+      <wsdl:input message="tns:RegistrarVentaCreditoSoapIn" />
+      <wsdl:output message="tns:RegistrarVentaCreditoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInformacionVentaCredito">
+      <wsdl:input message="tns:ConsultarInformacionVentaCreditoSoapIn" />
+      <wsdl:output message="tns:ConsultarInformacionVentaCreditoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarMetaMensual">
+      <wsdl:input message="tns:RecuperarMetaMensualSoapIn" />
+      <wsdl:output message="tns:RecuperarMetaMensualSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarEstadoChipMadre">
+      <wsdl:input message="tns:RecuperarEstadoChipMadreSoapIn" />
+      <wsdl:output message="tns:RecuperarEstadoChipMadreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarVentaTarjeta">
+      <wsdl:input message="tns:AutorizarVentaTarjetaSoapIn" />
+      <wsdl:output message="tns:AutorizarVentaTarjetaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MovimientosPrepago">
+      <wsdl:input message="tns:MovimientosPrepagoSoapIn" />
+      <wsdl:output message="tns:MovimientosPrepagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarSaldoTarjeta">
+      <wsdl:input message="tns:RecuperarSaldoTarjetaSoapIn" />
+      <wsdl:output message="tns:RecuperarSaldoTarjetaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ComunicacionSoap" type="tns:ComunicacionSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegistrarVentaEstacion">
+      <soap:operation soapAction="http://tempuri.org/RegistrarVentaEstacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarVentaGerenciamiento">
+      <soap:operation soapAction="http://tempuri.org/AutorizarVentaGerenciamiento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarVentaGerenciamiento">
+      <soap:operation soapAction="http://tempuri.org/ConfirmarVentaGerenciamiento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarTurnoEstacion">
+      <soap:operation soapAction="http://tempuri.org/RegistrarTurnoEstacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarVentaCredito">
+      <soap:operation soapAction="http://tempuri.org/RegistrarVentaCredito" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInformacionVentaCredito">
+      <soap:operation soapAction="http://tempuri.org/ConsultarInformacionVentaCredito" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarMetaMensual">
+      <soap:operation soapAction="http://tempuri.org/RecuperarMetaMensual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarEstadoChipMadre">
+      <soap:operation soapAction="http://tempuri.org/RecuperarEstadoChipMadre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarVentaTarjeta">
+      <soap:operation soapAction="http://tempuri.org/AutorizarVentaTarjeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovimientosPrepago">
+      <soap:operation soapAction="http://tempuri.org/MovimientosPrepago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarSaldoTarjeta">
+      <soap:operation soapAction="http://tempuri.org/RecuperarSaldoTarjeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ComunicacionSoap12" type="tns:ComunicacionSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegistrarVentaEstacion">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarVentaEstacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarVentaGerenciamiento">
+      <soap12:operation soapAction="http://tempuri.org/AutorizarVentaGerenciamiento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarVentaGerenciamiento">
+      <soap12:operation soapAction="http://tempuri.org/ConfirmarVentaGerenciamiento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarTurnoEstacion">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarTurnoEstacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarVentaCredito">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarVentaCredito" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInformacionVentaCredito">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarInformacionVentaCredito" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarMetaMensual">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarMetaMensual" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarEstadoChipMadre">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarEstadoChipMadre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarVentaTarjeta">
+      <soap12:operation soapAction="http://tempuri.org/AutorizarVentaTarjeta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovimientosPrepago">
+      <soap12:operation soapAction="http://tempuri.org/MovimientosPrepago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarSaldoTarjeta">
+      <soap12:operation soapAction="http://tempuri.org/RecuperarSaldoTarjeta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Comunicacion">
+    <wsdl:port name="ComunicacionSoap" binding="tns:ComunicacionSoap">
+      <soap:address location="http://localhost:50050/Comunicacion.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ComunicacionSoap12" binding="tns:ComunicacionSoap12">
+      <soap12:address location="http://localhost:50050/Comunicacion.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

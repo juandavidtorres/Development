@@ -1,0 +1,964 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{34A01D58-1BAF-4856-9751-D3A7669EE475}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>gasolutions.UInterface</RootNamespace>
+    <AssemblyName>DataAdminStation</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <ApplicationIcon>web_32.ico</ApplicationIcon>
+    <Win32Resource>
+    </Win32Resource>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\DataAdminStation.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\DataAdminStation.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.GrabacionTmex, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\LIBS\AxInterop.GrabacionTmex.dll</HintPath>
+    </Reference>
+    <Reference Include="ExportToExcel">
+      <HintPath>..\LIBS\ExportToExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="FabricaProtocolosC">
+      <HintPath>..\..\..\EncuestadorPos\SolutionEncuestadorPos\GasolutionsGilbarco_Extended\bin\x86\Release\FabricaProtocolosC.dll</HintPath>
+    </Reference>
+    <Reference Include="FabricaProtocoloServicio">
+      <HintPath>..\..\..\EncuestadorPos\SolutionEncuestadorPos\GasolutionsGilbarco_Extended\bin\x86\Release\FabricaProtocoloServicio.dll</HintPath>
+    </Reference>
+    <Reference Include="gasolutionsTmex">
+      <HintPath>..\gasolutionsTmex.dll</HintPath>
+    </Reference>
+    <Reference Include="hasp_net_windows">
+      <HintPath>..\hasp_net_windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.GrabacionTmex, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Interop.GrabacionTmex.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 9.0\Visual Studio Tools for Office\PIA\Office11\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libs\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libs\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libs\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging.Database, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Libs\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\POS-Colombia\ServicioSauce\bin\x86\Release\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\EstacionGTerpel\EstacionGTerpel\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\EstacionGTerpel\EstacionGTerpel\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\EstacionGTerpel\EstacionGTerpel\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PopupNotifier">
+      <HintPath>..\LIBS\PopupNotifier.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Auxiliar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auxiliar.Designer.cs">
+      <DependentUpon>Auxiliar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCreditoPorVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCreditoPorVehiculo.Designer.cs">
+      <DependentUpon>FrmCreditoPorVehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearch.Designer.cs">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsTarjeta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsTarjeta.Designer.cs">
+      <DependentUpon>gsTarjeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente.Designer.cs">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClienteBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClienteBuscar.designer.cs">
+      <DependentUpon>ClienteBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\BaseView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\CustomMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\CustomToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\HeaderRenderer.cs" />
+    <Compile Include="Components\TitleStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frmBuscarVehiculosCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarVehiculosCliente.Designer.cs">
+      <DependentUpon>frmBuscarVehiculosCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarVentaCredito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarVentaCredito.Designer.cs">
+      <DependentUpon>frmModificarVentaCredito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVehiculoVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVehiculoVenta.Designer.cs">
+      <DependentUpon>FrmVehiculoVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsConductor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsConductor.designer.cs">
+      <DependentUpon>gsConductor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsRenovarCredito.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsRenovarCredito.Designer.cs">
+      <DependentUpon>gsRenovarCredito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IdentificadorPlaca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IdentificadorPlaca.Designer.cs">
+      <DependentUpon>IdentificadorPlaca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImpresionConsignacion.cs">
+      <DependentUpon>ImpresionConsignacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ImpresionConsignacion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImpresionConsignacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ItemMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemMenu.Designer.cs">
+      <DependentUpon>ItemMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManejoLectorLsib4.cs" />
+    <Compile Include="Menu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuFinanciera.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuFinanciera.Designer.cs">
+      <DependentUpon>MenuFinanciera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuGerenciamiento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuGerenciamiento.Designer.cs">
+      <DependentUpon>MenuGerenciamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAdministracionEds.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuAdministracionEds.Designer.cs">
+      <DependentUpon>MenuAdministracionEds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsPrecioClienteCredito.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsPrecioClienteCredito.designer.cs">
+      <DependentUpon>gsPrecioClienteCredito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Creditos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creditos.Designer.cs">
+      <DependentUpon>Creditos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleado.Designer.cs">
+      <DependentUpon>Empleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarCliente.designer.cs">
+      <DependentUpon>frmBuscarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBuscarTarjeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarTarjeta.Designer.cs">
+      <DependentUpon>FrmBuscarTarjeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClienteCheque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClienteCheque.designer.cs">
+      <DependentUpon>FrmClienteCheque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIdentificador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIdentificador.Designer.cs">
+      <DependentUpon>frmIdentificador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInsertarLecturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInsertarLecturas.Designer.cs">
+      <DependentUpon>FrmInsertarLecturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generacion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Generacion.Designer.cs">
+      <DependentUpon>Generacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="General.cs" />
+    <Compile Include="gsAgregarMontoCheque.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsAgregarMontoCheque.designer.cs">
+      <DependentUpon>gsAgregarMontoCheque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsCheques.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsCheques.designer.cs">
+      <DependentUpon>gsCheques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsChips.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsChips.Designer.cs">
+      <DependentUpon>gsChips.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsCliente.designer.cs">
+      <DependentUpon>gsCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsConsigTransportadora.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsConsigTransportadora.designer.cs">
+      <DependentUpon>gsConsigTransportadora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsCreditos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsCreditos.designer.cs">
+      <DependentUpon>gsCreditos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsDevolucion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsDevolucion.designer.cs">
+      <DependentUpon>gsDevolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsEmpleados.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsEmpleados.Designer.cs">
+      <DependentUpon>gsEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsFacturacion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsFacturacion.Designer.cs">
+      <DependentUpon>gsFacturacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsFinacieras.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsFinacieras.Designer.cs">
+      <DependentUpon>gsFinacieras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsKilometraje.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsKilometraje.Designer.cs">
+      <DependentUpon>gsKilometraje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsOrdenPedido.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsOrdenPedido.designer.cs">
+      <DependentUpon>gsOrdenPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsPagoFacturas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsPagoFacturas.Designer.cs">
+      <DependentUpon>gsPagoFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsPrepago.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsPrepago.designer.cs">
+      <DependentUpon>gsPrepago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsResolucion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsResolucion.Designer.cs">
+      <DependentUpon>gsResolucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsRestricciones.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsRestricciones.designer.cs">
+      <DependentUpon>gsRestricciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsTipoVehiculo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsTipoVehiculo.Designer.cs">
+      <DependentUpon>gsTipoVehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsTransportadora.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsTransportadora.Designer.cs">
+      <DependentUpon>gsTransportadora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IdentificadorEmpleado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IdentificadorEmpleado.Designer.cs">
+      <DependentUpon>IdentificadorEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Impresion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impresion.designer.cs">
+      <DependentUpon>Impresion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InactivarChip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InactivarChip.Designer.cs">
+      <DependentUpon>InactivarChip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsertarLecturaVenta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InsertarLecturaVenta.Designer.cs">
+      <DependentUpon>InsertarLecturaVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facturar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturar.Designer.cs">
+      <DependentUpon>Facturar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="PromocionHoraFeliz.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PromocionHoraFeliz.Designer.cs">
+      <DependentUpon>PromocionHoraFeliz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Auxiliar.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Auxiliar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCreditoPorVehiculo.resx">
+      <DependentUpon>FrmCreditoPorVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearch.resx">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsTarjeta.resx">
+      <DependentUpon>gsTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClienteBuscar.resx">
+      <DependentUpon>ClienteBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\BaseView.resx">
+      <DependentUpon>BaseView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\CustomMenuStrip.resx">
+      <DependentUpon>CustomMenuStrip.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsignacionTransportadora.rdlc" />
+    <EmbeddedResource Include="frmBuscarVehiculosCliente.resx">
+      <DependentUpon>frmBuscarVehiculosCliente.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarVentaCredito.resx">
+      <DependentUpon>frmModificarVentaCredito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVehiculoVenta.resx">
+      <DependentUpon>FrmVehiculoVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsConductor.resx">
+      <DependentUpon>gsConductor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsRenovarCredito.resx">
+      <DependentUpon>gsRenovarCredito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IdentificadorPlaca.resx">
+      <DependentUpon>IdentificadorPlaca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuFinanciera.resx">
+      <DependentUpon>MenuFinanciera.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuGerenciamiento.resx">
+      <DependentUpon>MenuGerenciamiento.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuAdministracionEds.resx">
+      <DependentUpon>MenuAdministracionEds.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsPrecioClienteCredito.resx">
+      <DependentUpon>gsPrecioClienteCredito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Creditos.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Creditos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleado.resx">
+      <DependentUpon>Empleado.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarCliente.resx">
+      <DependentUpon>frmBuscarCliente.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarTarjeta.resx">
+      <DependentUpon>FrmBuscarTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClienteCheque.resx">
+      <DependentUpon>FrmClienteCheque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIdentificador.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmIdentificador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInsertarLecturas.resx">
+      <DependentUpon>FrmInsertarLecturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generacion.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Generacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsAgregarMontoCheque.resx">
+      <DependentUpon>gsAgregarMontoCheque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsCheques.resx">
+      <DependentUpon>gsCheques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsChips.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>gsChips.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsCliente.resx">
+      <DependentUpon>gsCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsConsigTransportadora.resx">
+      <DependentUpon>gsConsigTransportadora.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsCreditos.resx">
+      <DependentUpon>gsCreditos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsDevolucion.resx">
+      <DependentUpon>gsDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsEmpleados.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>gsEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsFacturacion.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>gsFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsFinacieras.resx">
+      <DependentUpon>gsFinacieras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsKilometraje.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>gsKilometraje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsOrdenPedido.resx">
+      <DependentUpon>gsOrdenPedido.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsPagoFacturas.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>gsPagoFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsPrepago.resx">
+      <DependentUpon>gsPrepago.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsResolucion.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>gsResolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsRestricciones.resx">
+      <DependentUpon>gsRestricciones.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsTipoVehiculo.resx">
+      <DependentUpon>gsTipoVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsTransportadora.resx">
+      <DependentUpon>gsTransportadora.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IdentificadorEmpleado.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>IdentificadorEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impresion.resx">
+      <DependentUpon>Impresion.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InactivarChip.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InactivarChip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertarLecturaVenta.resx">
+      <DependentUpon>InsertarLecturaVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturar.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Facturar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PromocionHoraFeliz.resx">
+      <DependentUpon>PromocionHoraFeliz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValidarUsuario.resx">
+      <DependentUpon>ValidarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehiculo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Vehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vehiculos.resx">
+      <DependentUpon>Vehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentasFueraSistemas.resx">
+      <DependentUpon>VentasFueraSistemas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Visor.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ImpresionConsignacion.xsc">
+      <DependentUpon>ImpresionConsignacion.xsd</DependentUpon>
+    </None>
+    <None Include="ImpresionConsignacion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ImpresionConsignacion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ImpresionConsignacion.xss">
+      <DependentUpon>ImpresionConsignacion.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="TextPrint.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ValidarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ValidarUsuario.designer.cs">
+      <DependentUpon>ValidarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValidateData.cs" />
+    <Compile Include="Vehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vehiculo.Designer.cs">
+      <DependentUpon>Vehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehiculos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vehiculos.designer.cs">
+      <DependentUpon>Vehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentasFueraSistemas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VentasFueraSistemas.Designer.cs">
+      <DependentUpon>VentasFueraSistemas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visor.Designer.cs">
+      <DependentUpon>Visor.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data Administrador.ico" />
+    <Content Include="Images\blueheader.bmp" />
+    <Content Include="Images\help.png" />
+    <Content Include="Images\leftspine.PNG" />
+    <None Include="Resources\cliente_.png" />
+    <None Include="Resources\calc_32.ico" />
+    <None Include="Resources\cliente_1.png" />
+    <None Include="Resources\asignar_credito_.png" />
+    <None Include="Resources\actualizar.png" />
+    <None Include="Resources\Cerrar.png" />
+    <None Include="Resources\addValor.png" />
+    <None Include="Resources\CerraFueraSistemas.png" />
+    <None Include="Resources\CerrarControlVentas.png" />
+    <None Include="Resources\Cancel.png" />
+    <None Include="Resources\Busqueda.png" />
+    <None Include="Resources\Actualizar %282%29.png" />
+    <None Include="Resources\Cancel %282%29.png" />
+    <None Include="Resources\Bucar16.png" />
+    <None Include="Resources\Check.png" />
+    <None Include="Resources\Chip.png" />
+    <None Include="Resources\Cheque.png" />
+    <None Include="Resources\Calc %282%29.png" />
+    <None Include="Resources\Calculadora.png" />
+    <None Include="Resources\BarraInf.png" />
+    <None Include="Resources\Backup.png" />
+    <None Include="Resources\Agregar1.png" />
+    <None Include="Resources\Aceptar.png" />
+    <Content Include="Resources\Calc.png" />
+    <Content Include="Resources\close_32.ico" />
+    <None Include="Resources\close_321.ico" />
+    <None Include="Resources\empleado.gif" />
+    <None Include="Resources\empleado_.png" />
+    <None Include="Resources\creditos_.png" />
+    <None Include="Resources\Consignaciones a Transportadoras.png" />
+    <None Include="Resources\dinero.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\Excel.png" />
+    <None Include="Resources\Excel.gif" />
+    <None Include="Resources\Devolucion.png" />
+    <None Include="Resources\Editar.png" />
+    <None Include="Resources\Eliminar.png" />
+    <None Include="Resources\Export.png" />
+    <None Include="Resources\Creditos.png" />
+    <None Include="Resources\Encabezado3.bmp" />
+    <Content Include="Resources\export1.ico" />
+    <None Include="Resources\exp_32.ico" />
+    <None Include="Resources\Factura_48x48.png" />
+    <None Include="Resources\Facturar.png" />
+    <Content Include="Resources\find.ico" />
+    <Content Include="Resources\form_green.ico" />
+    <None Include="Resources\FueraSistemas.png" />
+    <Content Include="Resources\group_32.ico" />
+    <None Include="Resources\guardar.png" />
+    <None Include="Resources\Iconos Full Station2.png" />
+    <None Include="Resources\Guardar %282%29.png" />
+    <None Include="Resources\Guardar %283%293.png" />
+    <Content Include="Resources\import1.ico" />
+    <None Include="Resources\impt_32.ico" />
+    <None Include="Resources\lectores_.png" />
+    <None Include="Resources\Lector 48x48.bmp" />
+    <Content Include="Resources\impresora.png" />
+    <None Include="Resources\limpiar.png" />
+    <None Include="Resources\Limpiar %283%29.png" />
+    <None Include="Resources\Imprimir.png" />
+    <None Include="Resources\Mas.png" />
+    <None Include="Resources\ModificarSaldos.png" />
+    <None Include="Resources\MnuVentasRecuperadas.png" />
+    <None Include="Resources\Limpiar %283%291.png" />
+    <Content Include="Resources\MnuTarjeta.png" />
+    <Content Include="Resources\move_32.ico" />
+    <None Include="Resources\refresh.ico" />
+    <None Include="Resources\nuevo.png" />
+    <None Include="Resources\Salir.png" />
+    <None Include="Resources\Restricciones.png" />
+    <None Include="Resources\Resoluciones de facturacion.png" />
+    <None Include="Resources\Nuevo %282%29.png" />
+    <Content Include="Resources\OrdenPedido.png" />
+    <None Include="Resources\PrecioxClienteoVehiculo32.png" />
+    <None Include="Resources\Predet.png" />
+    <None Include="Resources\Placa.png" />
+    <Content Include="Resources\RecepcionPedido.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\Regresar.png" />
+    <Content Include="Resources\smicn_241.ico" />
+    <Content Include="Resources\table_sql.ico" />
+    <None Include="Resources\top.bmp" />
+    <None Include="Resources\Transportadoras de Valores.png" />
+    <None Include="Resources\TiposdeVehiculos.png" />
+    <None Include="Resources\TiposdeVehiculos32x32.png" />
+    <Content Include="Resources\up_down.ico" />
+    <None Include="Resources\vehiculo_.png" />
+    <None Include="Resources\Vehiculo.png" />
+    <None Include="Resources\Vehiculo %282%29.png" />
+    <None Include="Resources\Venta.png" />
+    <None Include="Resources\Vehiculo2.png" />
+    <None Include="Resources\Vehiculo3.png" />
+    <None Include="Resources\Vehiculo4.png" />
+    <Content Include="Resources\view.ico" />
+    <Content Include="Resources\view_next.ico" />
+    <Content Include="web_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBA">
+      <Guid>{000204EF-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>9</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AccesoDatosPOSstation\DA_POSstation.vbproj">
+      <Project>{225233e2-f9a2-4c6c-b2cb-b9a88919cbc0}</Project>
+      <Name>DA_POSstation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Controles\Controles.csproj">
+      <Project>{3ce73096-3699-44ae-83b8-280eedfff5ff}</Project>
+      <Name>Controles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTIReader\DTIReader.csproj">
+      <Project>{c5354edf-9272-474b-84a8-45eeec39eca3}</Project>
+      <Name>DTIReader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EncriptacionDti\EncriptacionDti.csproj">
+      <Project>{e1f62a6a-3e98-4563-9767-59acb3ec073c}</Project>
+      <Name>EncriptacionDti</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FabricaPosColombia\HP_FabricaColombia.vbproj">
+      <Project>{34e43672-06aa-4800-8f2e-b61a6f4cbd77}</Project>
+      <Name>HP_FabricaColombia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HelperPOSstation\HP_HelperPOSstation.vbproj">
+      <Project>{ca843156-ccfb-4e1b-aa61-1e8498a5877d}</Project>
+      <Name>HP_HelperPOSstation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JRINCCustomControls\JRINCCustomControls.csproj">
+      <Project>{c8b714bf-091d-4972-af18-6f6904fd0d8d}</Project>
+      <Name>JRINCCustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NormaColombiana\HP_NormaColombiana.vbproj">
+      <Project>{35e69482-7d58-4da6-8c22-527ca7c2c842}</Project>
+      <Name>HP_NormaColombiana</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NotificacionPosStation\Notificacion.csproj">
+      <Project>{e4a345c5-3355-40f9-9a82-0a18ee336ee3}</Project>
+      <Name>Notificacion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POS-Colombia\ServicioSauce\ServicioSauce.vbproj">
+      <Project>{cc6930c3-14d4-4537-8a75-8eeda2ef603c}</Project>
+      <Name>ServicioSauce</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

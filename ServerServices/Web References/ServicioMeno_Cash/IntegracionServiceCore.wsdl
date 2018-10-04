@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://ws.sexternos.iev.ptesa.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="IntegracionServiceCore" targetNamespace="http://ws.sexternos.iev.ptesa.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="IntegracionServiceCore.xsd" namespace="http://ws.sexternos.iev.ptesa.com/" />
+    </xsd:schema>
+  </types>
+  <message name="Preautorizar">
+    <part name="parameters" element="tns:Preautorizar" />
+  </message>
+  <message name="PreautorizarResponse">
+    <part name="parameters" element="tns:PreautorizarResponse" />
+  </message>
+  <message name="Confirmar">
+    <part name="parameters" element="tns:Confirmar" />
+  </message>
+  <message name="ConfirmarResponse">
+    <part name="parameters" element="tns:ConfirmarResponse" />
+  </message>
+  <portType name="IntegracionServiceCore">
+    <operation name="Preautorizar">
+      <input wsam:Action="http://ws.sexternos.iev.ptesa.com/IntegracionServiceCore/PreautorizarRequest" message="tns:Preautorizar" />
+      <output wsam:Action="http://ws.sexternos.iev.ptesa.com/IntegracionServiceCore/PreautorizarResponse" message="tns:PreautorizarResponse" />
+    </operation>
+    <operation name="Confirmar">
+      <input wsam:Action="http://ws.sexternos.iev.ptesa.com/IntegracionServiceCore/ConfirmarRequest" message="tns:Confirmar" />
+      <output wsam:Action="http://ws.sexternos.iev.ptesa.com/IntegracionServiceCore/ConfirmarResponse" message="tns:ConfirmarResponse" />
+    </operation>
+  </portType>
+  <binding name="IntegracionServiceCorePortBinding" type="tns:IntegracionServiceCore">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Preautorizar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Confirmar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="IntegracionServiceCore">
+    <port name="IntegracionServiceCorePort" binding="tns:IntegracionServiceCorePortBinding">
+      <soap:address location="https://190.144.190.200/IntegracionServiceCore.svc" />
+    </port>
+  </service>
+</definitions>

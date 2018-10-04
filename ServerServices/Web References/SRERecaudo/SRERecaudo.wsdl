@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="POSstation.Servicios" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="POSstation.Servicios" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="POSstation.Servicios">
+      <s:element name="ConsultarConceptos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Placa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Movil" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarConceptosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarConceptosResult" type="tns:ArrayOfRespuestaConsultaConceptoEmpresa" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRespuestaConsultaConceptoEmpresa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RespuestaConsultaConceptoEmpresa" nillable="true" type="tns:RespuestaConsultaConceptoEmpresa" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RespuestaConsultaConceptoEmpresa">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DescPeriodos" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaFinal" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaInicial" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdMovil" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Periodo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Periodos" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Saldo" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdConcepto" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InformarPagoNoRealizado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Placa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Movil" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdRecaudoEstacion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fecha" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodEstacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InformarPagoNoRealizadoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RegistrarRecaudo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Placa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Movil" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdRecaudoEstacion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdConcepto" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CantidadPeriodos" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodEstacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarRecaudoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarRecaudoResult" type="tns:RespuestaServicioRecaudo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaServicioRecaudo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdRecaudoEmpresa" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Periodos" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EsProcesado" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fecha" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultarConceptosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarConceptos" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarConceptosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarConceptosResponse" />
+  </wsdl:message>
+  <wsdl:message name="InformarPagoNoRealizadoSoapIn">
+    <wsdl:part name="parameters" element="tns:InformarPagoNoRealizado" />
+  </wsdl:message>
+  <wsdl:message name="InformarPagoNoRealizadoSoapOut">
+    <wsdl:part name="parameters" element="tns:InformarPagoNoRealizadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarRecaudoSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarRecaudo" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarRecaudoSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarRecaudoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SRERecaudoSoap">
+    <wsdl:operation name="ConsultarConceptos">
+      <wsdl:input message="tns:ConsultarConceptosSoapIn" />
+      <wsdl:output message="tns:ConsultarConceptosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InformarPagoNoRealizado">
+      <wsdl:input message="tns:InformarPagoNoRealizadoSoapIn" />
+      <wsdl:output message="tns:InformarPagoNoRealizadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarRecaudo">
+      <wsdl:input message="tns:RegistrarRecaudoSoapIn" />
+      <wsdl:output message="tns:RegistrarRecaudoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SRERecaudoSoap" type="tns:SRERecaudoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarConceptos">
+      <soap:operation soapAction="POSstation.Servicios/ConsultarConceptos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformarPagoNoRealizado">
+      <soap:operation soapAction="POSstation.Servicios/InformarPagoNoRealizado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarRecaudo">
+      <soap:operation soapAction="POSstation.Servicios/RegistrarRecaudo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SRERecaudoSoap12" type="tns:SRERecaudoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultarConceptos">
+      <soap12:operation soapAction="POSstation.Servicios/ConsultarConceptos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InformarPagoNoRealizado">
+      <soap12:operation soapAction="POSstation.Servicios/InformarPagoNoRealizado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarRecaudo">
+      <soap12:operation soapAction="POSstation.Servicios/RegistrarRecaudo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SRERecaudo">
+    <wsdl:port name="SRERecaudoSoap" binding="tns:SRERecaudoSoap">
+      <soap:address location="http://localhost:51426/ServicioRecaudoEmpresa/SRERecaudo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SRERecaudoSoap12" binding="tns:SRERecaudoSoap12">
+      <soap12:address location="http://localhost:51426/ServicioRecaudoEmpresa/SRERecaudo.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

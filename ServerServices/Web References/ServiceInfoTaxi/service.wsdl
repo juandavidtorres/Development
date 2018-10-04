@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.infotaxi.co/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.infotaxi.co/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.infotaxi.co/">
+      <s:element name="Consulta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="placa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="movil" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Pagar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="placa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="movil" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idRecibo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idConcepto" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidadPeriodos" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="total" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="infoEstacionOperador" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PagarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PagarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="md5Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidarUsuarioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IngresarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="md5Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contactoNombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numeroTelefonoFijo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numeroCelular" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ciudad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="barrio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correoElectronico" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IngresarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IngresarUsuarioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CambiarContrasena">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="md5AnteriorPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="md5NuevoPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CambiarContrasenaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CambiarContrasenaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarVale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCuenta" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="numeroVale" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarValeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidarValeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProgramarServicio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numeroTelefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombreContacto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccionRecogida" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tipoServicio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="tipoMovil" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccionDestino1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccionDestino2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaHoraDespertador" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaHoraRecogida" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="conVale" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCuenta" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="centroCosto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccionDestino" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numeroVale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="observaciones" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProgramarServicioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProgramarServicioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultaSoapIn">
+    <wsdl:part name="parameters" element="tns:Consulta" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="PagarSoapIn">
+    <wsdl:part name="parameters" element="tns:Pagar" />
+  </wsdl:message>
+  <wsdl:message name="PagarSoapOut">
+    <wsdl:part name="parameters" element="tns:PagarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ValidarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IngresarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:IngresarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IngresarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:IngresarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="CambiarContrasenaSoapIn">
+    <wsdl:part name="parameters" element="tns:CambiarContrasena" />
+  </wsdl:message>
+  <wsdl:message name="CambiarContrasenaSoapOut">
+    <wsdl:part name="parameters" element="tns:CambiarContrasenaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarValeSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidarVale" />
+  </wsdl:message>
+  <wsdl:message name="ValidarValeSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidarValeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProgramarServicioSoapIn">
+    <wsdl:part name="parameters" element="tns:ProgramarServicio" />
+  </wsdl:message>
+  <wsdl:message name="ProgramarServicioSoapOut">
+    <wsdl:part name="parameters" element="tns:ProgramarServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaHttpGetIn">
+    <wsdl:part name="placa" type="s:string" />
+    <wsdl:part name="movil" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="PagarHttpGetIn">
+    <wsdl:part name="placa" type="s:string" />
+    <wsdl:part name="movil" type="s:string" />
+    <wsdl:part name="idRecibo" type="s:string" />
+    <wsdl:part name="idConcepto" type="s:string" />
+    <wsdl:part name="cantidadPeriodos" type="s:string" />
+    <wsdl:part name="total" type="s:string" />
+    <wsdl:part name="infoEstacionOperador" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PagarHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="ValidarUsuarioHttpGetIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="md5Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidarUsuarioHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="IngresarUsuarioHttpGetIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="md5Password" type="s:string" />
+    <wsdl:part name="contactoNombre" type="s:string" />
+    <wsdl:part name="numeroTelefonoFijo" type="s:string" />
+    <wsdl:part name="numeroCelular" type="s:string" />
+    <wsdl:part name="direccion" type="s:string" />
+    <wsdl:part name="ciudad" type="s:string" />
+    <wsdl:part name="barrio" type="s:string" />
+    <wsdl:part name="correoElectronico" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IngresarUsuarioHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CambiarContrasenaHttpGetIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="md5AnteriorPassword" type="s:string" />
+    <wsdl:part name="md5NuevoPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CambiarContrasenaHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ValidarValeHttpGetIn">
+    <wsdl:part name="codigoCuenta" type="s:string" />
+    <wsdl:part name="numeroVale" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidarValeHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ProgramarServicioHttpGetIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="numeroTelefono" type="s:string" />
+    <wsdl:part name="nombreContacto" type="s:string" />
+    <wsdl:part name="direccionRecogida" type="s:string" />
+    <wsdl:part name="tipoServicio" type="s:string" />
+    <wsdl:part name="tipoMovil" type="s:string" />
+    <wsdl:part name="direccionDestino1" type="s:string" />
+    <wsdl:part name="direccionDestino2" type="s:string" />
+    <wsdl:part name="fechaHoraDespertador" type="s:string" />
+    <wsdl:part name="fechaHoraRecogida" type="s:string" />
+    <wsdl:part name="conVale" type="s:string" />
+    <wsdl:part name="codigoCuenta" type="s:string" />
+    <wsdl:part name="centroCosto" type="s:string" />
+    <wsdl:part name="direccionDestino" type="s:string" />
+    <wsdl:part name="numeroVale" type="s:string" />
+    <wsdl:part name="observaciones" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProgramarServicioHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaHttpPostIn">
+    <wsdl:part name="placa" type="s:string" />
+    <wsdl:part name="movil" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="PagarHttpPostIn">
+    <wsdl:part name="placa" type="s:string" />
+    <wsdl:part name="movil" type="s:string" />
+    <wsdl:part name="idRecibo" type="s:string" />
+    <wsdl:part name="idConcepto" type="s:string" />
+    <wsdl:part name="cantidadPeriodos" type="s:string" />
+    <wsdl:part name="total" type="s:string" />
+    <wsdl:part name="infoEstacionOperador" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PagarHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="ValidarUsuarioHttpPostIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="md5Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidarUsuarioHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="IngresarUsuarioHttpPostIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="md5Password" type="s:string" />
+    <wsdl:part name="contactoNombre" type="s:string" />
+    <wsdl:part name="numeroTelefonoFijo" type="s:string" />
+    <wsdl:part name="numeroCelular" type="s:string" />
+    <wsdl:part name="direccion" type="s:string" />
+    <wsdl:part name="ciudad" type="s:string" />
+    <wsdl:part name="barrio" type="s:string" />
+    <wsdl:part name="correoElectronico" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IngresarUsuarioHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CambiarContrasenaHttpPostIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="md5AnteriorPassword" type="s:string" />
+    <wsdl:part name="md5NuevoPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CambiarContrasenaHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ValidarValeHttpPostIn">
+    <wsdl:part name="codigoCuenta" type="s:string" />
+    <wsdl:part name="numeroVale" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidarValeHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="ProgramarServicioHttpPostIn">
+    <wsdl:part name="login" type="s:string" />
+    <wsdl:part name="numeroTelefono" type="s:string" />
+    <wsdl:part name="nombreContacto" type="s:string" />
+    <wsdl:part name="direccionRecogida" type="s:string" />
+    <wsdl:part name="tipoServicio" type="s:string" />
+    <wsdl:part name="tipoMovil" type="s:string" />
+    <wsdl:part name="direccionDestino1" type="s:string" />
+    <wsdl:part name="direccionDestino2" type="s:string" />
+    <wsdl:part name="fechaHoraDespertador" type="s:string" />
+    <wsdl:part name="fechaHoraRecogida" type="s:string" />
+    <wsdl:part name="conVale" type="s:string" />
+    <wsdl:part name="codigoCuenta" type="s:string" />
+    <wsdl:part name="centroCosto" type="s:string" />
+    <wsdl:part name="direccionDestino" type="s:string" />
+    <wsdl:part name="numeroVale" type="s:string" />
+    <wsdl:part name="observaciones" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ProgramarServicioHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="Consulta">
+      <wsdl:input message="tns:ConsultaSoapIn" />
+      <wsdl:output message="tns:ConsultaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Pagar">
+      <wsdl:input message="tns:PagarSoapIn" />
+      <wsdl:output message="tns:PagarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <wsdl:input message="tns:ValidarUsuarioSoapIn" />
+      <wsdl:output message="tns:ValidarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IngresarUsuario">
+      <wsdl:input message="tns:IngresarUsuarioSoapIn" />
+      <wsdl:output message="tns:IngresarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CambiarContrasena">
+      <wsdl:input message="tns:CambiarContrasenaSoapIn" />
+      <wsdl:output message="tns:CambiarContrasenaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarVale">
+      <wsdl:input message="tns:ValidarValeSoapIn" />
+      <wsdl:output message="tns:ValidarValeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProgramarServicio">
+      <wsdl:input message="tns:ProgramarServicioSoapIn" />
+      <wsdl:output message="tns:ProgramarServicioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpGet">
+    <wsdl:operation name="Consulta">
+      <wsdl:input message="tns:ConsultaHttpGetIn" />
+      <wsdl:output message="tns:ConsultaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Pagar">
+      <wsdl:input message="tns:PagarHttpGetIn" />
+      <wsdl:output message="tns:PagarHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <wsdl:input message="tns:ValidarUsuarioHttpGetIn" />
+      <wsdl:output message="tns:ValidarUsuarioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IngresarUsuario">
+      <wsdl:input message="tns:IngresarUsuarioHttpGetIn" />
+      <wsdl:output message="tns:IngresarUsuarioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CambiarContrasena">
+      <wsdl:input message="tns:CambiarContrasenaHttpGetIn" />
+      <wsdl:output message="tns:CambiarContrasenaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarVale">
+      <wsdl:input message="tns:ValidarValeHttpGetIn" />
+      <wsdl:output message="tns:ValidarValeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProgramarServicio">
+      <wsdl:input message="tns:ProgramarServicioHttpGetIn" />
+      <wsdl:output message="tns:ProgramarServicioHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpPost">
+    <wsdl:operation name="Consulta">
+      <wsdl:input message="tns:ConsultaHttpPostIn" />
+      <wsdl:output message="tns:ConsultaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Pagar">
+      <wsdl:input message="tns:PagarHttpPostIn" />
+      <wsdl:output message="tns:PagarHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <wsdl:input message="tns:ValidarUsuarioHttpPostIn" />
+      <wsdl:output message="tns:ValidarUsuarioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IngresarUsuario">
+      <wsdl:input message="tns:IngresarUsuarioHttpPostIn" />
+      <wsdl:output message="tns:IngresarUsuarioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CambiarContrasena">
+      <wsdl:input message="tns:CambiarContrasenaHttpPostIn" />
+      <wsdl:output message="tns:CambiarContrasenaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarVale">
+      <wsdl:input message="tns:ValidarValeHttpPostIn" />
+      <wsdl:output message="tns:ValidarValeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProgramarServicio">
+      <wsdl:input message="tns:ProgramarServicioHttpPostIn" />
+      <wsdl:output message="tns:ProgramarServicioHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Consulta">
+      <soap:operation soapAction="http://www.infotaxi.co/Consulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pagar">
+      <soap:operation soapAction="http://www.infotaxi.co/Pagar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <soap:operation soapAction="http://www.infotaxi.co/ValidarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IngresarUsuario">
+      <soap:operation soapAction="http://www.infotaxi.co/IngresarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CambiarContrasena">
+      <soap:operation soapAction="http://www.infotaxi.co/CambiarContrasena" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarVale">
+      <soap:operation soapAction="http://www.infotaxi.co/ValidarVale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProgramarServicio">
+      <soap:operation soapAction="http://www.infotaxi.co/ProgramarServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Consulta">
+      <soap12:operation soapAction="http://www.infotaxi.co/Consulta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pagar">
+      <soap12:operation soapAction="http://www.infotaxi.co/Pagar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <soap12:operation soapAction="http://www.infotaxi.co/ValidarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IngresarUsuario">
+      <soap12:operation soapAction="http://www.infotaxi.co/IngresarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CambiarContrasena">
+      <soap12:operation soapAction="http://www.infotaxi.co/CambiarContrasena" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarVale">
+      <soap12:operation soapAction="http://www.infotaxi.co/ValidarVale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProgramarServicio">
+      <soap12:operation soapAction="http://www.infotaxi.co/ProgramarServicio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Consulta">
+      <http:operation location="/Consulta" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pagar">
+      <http:operation location="/Pagar" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <http:operation location="/ValidarUsuario" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IngresarUsuario">
+      <http:operation location="/IngresarUsuario" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CambiarContrasena">
+      <http:operation location="/CambiarContrasena" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarVale">
+      <http:operation location="/ValidarVale" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProgramarServicio">
+      <http:operation location="/ProgramarServicio" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpPost" type="tns:ServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Consulta">
+      <http:operation location="/Consulta" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pagar">
+      <http:operation location="/Pagar" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuario">
+      <http:operation location="/ValidarUsuario" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IngresarUsuario">
+      <http:operation location="/IngresarUsuario" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CambiarContrasena">
+      <http:operation location="/CambiarContrasena" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarVale">
+      <http:operation location="/ValidarVale" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProgramarServicio">
+      <http:operation location="/ProgramarServicio" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://lider386.infotaxi.co/gasolutions/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://lider386.infotaxi.co/gasolutions/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
+      <http:address location="http://lider386.infotaxi.co/gasolutions/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
+      <http:address location="http://lider386.infotaxi.co/gasolutions/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

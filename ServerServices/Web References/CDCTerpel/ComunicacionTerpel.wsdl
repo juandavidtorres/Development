@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://GNC.CDC/ServiciosVentaGasSL" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="http://Terpel.CDC/AutorizacionVentaSL.xsd" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://GNC.CDC/ServiciosVentaGasSL" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://GNC.CDC/ServiciosVentaGasSL">
+      <s:import namespace="http://Terpel.CDC/AutorizacionVentaSL.xsd" />
+      <s:element name="AutorizacionSuministroSL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Solicitud" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutorizacionSuministroSLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AutorizacionSuministroSLResult" type="s1:AutorizacionSuministroSLResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarVentaGasSL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VentaGasSL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarVentaGasSLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarVentaGasSLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CerrarDiaSL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cierre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CerrarDiaSLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CerrarDiaSLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LiberarAutorizacionesSL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="autorizacionesLibres" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LiberarAutorizacionesSLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LiberarAutorizacionesSLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaFaltantesSL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Solicitud" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaFaltantesSLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaFaltantesSLResult" type="tns:ListaConsecutivosFaltantes" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ListaConsecutivosFaltantes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="consecutivos" type="tns:ArrayOfConsecutivosFaltantes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfConsecutivosFaltantes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ConsecutivosFaltantes" nillable="true" type="tns:ConsecutivosFaltantes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConsecutivosFaltantes">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CODEDS" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IA" type="tns:ArrayOfInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="IT" type="tns:ArrayOfInt" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AutorizacionSuministroSLResult" nillable="true" type="s1:AutorizacionSuministroSLResult" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ListaConsecutivosFaltantes" nillable="true" type="tns:ListaConsecutivosFaltantes" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://Terpel.CDC/AutorizacionVentaSL.xsd">
+      <s:complexType name="AutorizacionSuministroSLResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IA" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="M" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IFP" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CMV" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CMD" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SD" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="NC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="P" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VII" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AutorizacionSuministroSLSoapIn">
+    <wsdl:part name="parameters" element="tns:AutorizacionSuministroSL" />
+  </wsdl:message>
+  <wsdl:message name="AutorizacionSuministroSLSoapOut">
+    <wsdl:part name="parameters" element="tns:AutorizacionSuministroSLResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarVentaGasSLSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarVentaGasSL" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarVentaGasSLSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarVentaGasSLResponse" />
+  </wsdl:message>
+  <wsdl:message name="CerrarDiaSLSoapIn">
+    <wsdl:part name="parameters" element="tns:CerrarDiaSL" />
+  </wsdl:message>
+  <wsdl:message name="CerrarDiaSLSoapOut">
+    <wsdl:part name="parameters" element="tns:CerrarDiaSLResponse" />
+  </wsdl:message>
+  <wsdl:message name="LiberarAutorizacionesSLSoapIn">
+    <wsdl:part name="parameters" element="tns:LiberarAutorizacionesSL" />
+  </wsdl:message>
+  <wsdl:message name="LiberarAutorizacionesSLSoapOut">
+    <wsdl:part name="parameters" element="tns:LiberarAutorizacionesSLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaFaltantesSLSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaFaltantesSL" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaFaltantesSLSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaFaltantesSLResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutorizacionSuministroSLHttpGetIn">
+    <wsdl:part name="Solicitud" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AutorizacionSuministroSLHttpGetOut">
+    <wsdl:part name="Body" element="tns:AutorizacionSuministroSLResult" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarVentaGasSLHttpGetIn">
+    <wsdl:part name="VentaGasSL" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarVentaGasSLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CerrarDiaSLHttpGetIn">
+    <wsdl:part name="cierre" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CerrarDiaSLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LiberarAutorizacionesSLHttpGetIn">
+    <wsdl:part name="autorizacionesLibres" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LiberarAutorizacionesSLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaFaltantesSLHttpGetIn">
+    <wsdl:part name="Solicitud" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaFaltantesSLHttpGetOut">
+    <wsdl:part name="Body" element="tns:ListaConsecutivosFaltantes" />
+  </wsdl:message>
+  <wsdl:message name="AutorizacionSuministroSLHttpPostIn">
+    <wsdl:part name="Solicitud" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AutorizacionSuministroSLHttpPostOut">
+    <wsdl:part name="Body" element="tns:AutorizacionSuministroSLResult" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarVentaGasSLHttpPostIn">
+    <wsdl:part name="VentaGasSL" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarVentaGasSLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CerrarDiaSLHttpPostIn">
+    <wsdl:part name="cierre" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CerrarDiaSLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LiberarAutorizacionesSLHttpPostIn">
+    <wsdl:part name="autorizacionesLibres" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LiberarAutorizacionesSLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaFaltantesSLHttpPostIn">
+    <wsdl:part name="Solicitud" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaFaltantesSLHttpPostOut">
+    <wsdl:part name="Body" element="tns:ListaConsecutivosFaltantes" />
+  </wsdl:message>
+  <wsdl:portType name="IntegratorSoap">
+    <wsdl:operation name="AutorizacionSuministroSL">
+      <wsdl:input message="tns:AutorizacionSuministroSLSoapIn" />
+      <wsdl:output message="tns:AutorizacionSuministroSLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarVentaGasSL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registra una venta de gas realizadas en la EDS (Satelite Light).</wsdl:documentation>
+      <wsdl:input message="tns:RegistrarVentaGasSLSoapIn" />
+      <wsdl:output message="tns:RegistrarVentaGasSLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CerrarDiaSL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Realiza el cierre de las estaciones. Recibe un acuse de recibo que incluye los cierres de turno que incluye el cierre de día</wsdl:documentation>
+      <wsdl:input message="tns:CerrarDiaSLSoapIn" />
+      <wsdl:output message="tns:CerrarDiaSLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LiberarAutorizacionesSL">
+      <wsdl:input message="tns:LiberarAutorizacionesSLSoapIn" />
+      <wsdl:output message="tns:LiberarAutorizacionesSLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaFaltantesSL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consultar cuales aprobaciones y turnos estan pendientes para la EDS (Satelite Light).</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaFaltantesSLSoapIn" />
+      <wsdl:output message="tns:ConsultaFaltantesSLSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IntegratorHttpGet">
+    <wsdl:operation name="AutorizacionSuministroSL">
+      <wsdl:input message="tns:AutorizacionSuministroSLHttpGetIn" />
+      <wsdl:output message="tns:AutorizacionSuministroSLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarVentaGasSL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registra una venta de gas realizadas en la EDS (Satelite Light).</wsdl:documentation>
+      <wsdl:input message="tns:RegistrarVentaGasSLHttpGetIn" />
+      <wsdl:output message="tns:RegistrarVentaGasSLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CerrarDiaSL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Realiza el cierre de las estaciones. Recibe un acuse de recibo que incluye los cierres de turno que incluye el cierre de día</wsdl:documentation>
+      <wsdl:input message="tns:CerrarDiaSLHttpGetIn" />
+      <wsdl:output message="tns:CerrarDiaSLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LiberarAutorizacionesSL">
+      <wsdl:input message="tns:LiberarAutorizacionesSLHttpGetIn" />
+      <wsdl:output message="tns:LiberarAutorizacionesSLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaFaltantesSL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consultar cuales aprobaciones y turnos estan pendientes para la EDS (Satelite Light).</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaFaltantesSLHttpGetIn" />
+      <wsdl:output message="tns:ConsultaFaltantesSLHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IntegratorHttpPost">
+    <wsdl:operation name="AutorizacionSuministroSL">
+      <wsdl:input message="tns:AutorizacionSuministroSLHttpPostIn" />
+      <wsdl:output message="tns:AutorizacionSuministroSLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarVentaGasSL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Registra una venta de gas realizadas en la EDS (Satelite Light).</wsdl:documentation>
+      <wsdl:input message="tns:RegistrarVentaGasSLHttpPostIn" />
+      <wsdl:output message="tns:RegistrarVentaGasSLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CerrarDiaSL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Realiza el cierre de las estaciones. Recibe un acuse de recibo que incluye los cierres de turno que incluye el cierre de día</wsdl:documentation>
+      <wsdl:input message="tns:CerrarDiaSLHttpPostIn" />
+      <wsdl:output message="tns:CerrarDiaSLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LiberarAutorizacionesSL">
+      <wsdl:input message="tns:LiberarAutorizacionesSLHttpPostIn" />
+      <wsdl:output message="tns:LiberarAutorizacionesSLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaFaltantesSL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consultar cuales aprobaciones y turnos estan pendientes para la EDS (Satelite Light).</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaFaltantesSLHttpPostIn" />
+      <wsdl:output message="tns:ConsultaFaltantesSLHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IntegratorSoap" type="tns:IntegratorSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AutorizacionSuministroSL">
+      <soap:operation soapAction="http://GNC.CDC/ServiciosVentaGasSL/AutorizacionSuministroSL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarVentaGasSL">
+      <soap:operation soapAction="http://GNC.CDC/ServiciosVentaGasSL/RegistrarVentaGasSL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CerrarDiaSL">
+      <soap:operation soapAction="http://GNC.CDC/ServiciosVentaGasSL/CerrarDiaSL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LiberarAutorizacionesSL">
+      <soap:operation soapAction="http://GNC.CDC/ServiciosVentaGasSL/LiberarAutorizacionesSL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaFaltantesSL">
+      <soap:operation soapAction="http://GNC.CDC/ServiciosVentaGasSL/ConsultaFaltantesSL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IntegratorSoap12" type="tns:IntegratorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AutorizacionSuministroSL">
+      <soap12:operation soapAction="http://GNC.CDC/ServiciosVentaGasSL/AutorizacionSuministroSL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarVentaGasSL">
+      <soap12:operation soapAction="http://GNC.CDC/ServiciosVentaGasSL/RegistrarVentaGasSL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CerrarDiaSL">
+      <soap12:operation soapAction="http://GNC.CDC/ServiciosVentaGasSL/CerrarDiaSL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LiberarAutorizacionesSL">
+      <soap12:operation soapAction="http://GNC.CDC/ServiciosVentaGasSL/LiberarAutorizacionesSL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaFaltantesSL">
+      <soap12:operation soapAction="http://GNC.CDC/ServiciosVentaGasSL/ConsultaFaltantesSL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IntegratorHttpGet" type="tns:IntegratorHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="AutorizacionSuministroSL">
+      <http:operation location="/AutorizacionSuministroSL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarVentaGasSL">
+      <http:operation location="/RegistrarVentaGasSL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CerrarDiaSL">
+      <http:operation location="/CerrarDiaSL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LiberarAutorizacionesSL">
+      <http:operation location="/LiberarAutorizacionesSL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaFaltantesSL">
+      <http:operation location="/ConsultaFaltantesSL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IntegratorHttpPost" type="tns:IntegratorHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="AutorizacionSuministroSL">
+      <http:operation location="/AutorizacionSuministroSL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarVentaGasSL">
+      <http:operation location="/RegistrarVentaGasSL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CerrarDiaSL">
+      <http:operation location="/CerrarDiaSL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LiberarAutorizacionesSL">
+      <http:operation location="/LiberarAutorizacionesSL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaFaltantesSL">
+      <http:operation location="/ConsultaFaltantesSL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Integrator">
+    <wsdl:port name="IntegratorSoap" binding="tns:IntegratorSoap">
+      <soap:address location="http://172.16.3.12/Terpel.SecureService/Integrator.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IntegratorSoap12" binding="tns:IntegratorSoap12">
+      <soap12:address location="http://172.16.3.12/Terpel.SecureService/Integrator.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IntegratorHttpGet" binding="tns:IntegratorHttpGet">
+      <http:address location="http://172.16.3.12/Terpel.SecureService/Integrator.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IntegratorHttpPost" binding="tns:IntegratorHttpPost">
+      <http:address location="http://172.16.3.12/Terpel.SecureService/Integrator.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

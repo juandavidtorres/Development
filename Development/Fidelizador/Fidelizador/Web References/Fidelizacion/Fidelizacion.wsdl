@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RegistrarVentaFidelizada">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="recibo" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechahora" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="valor" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="placa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idproducto" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="codEstacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tarjeta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarVentaFidelizadaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarVentaFidelizadaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarVentaFidelizadaPorNroConductor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="recibo" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechahora" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="valor" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="placa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idproducto" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="codEstacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nroConductor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarVentaFidelizadaPorNroConductorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarVentaFidelizadaPorNroConductorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSaldosTarjetaPorEDS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codEstacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tarjeta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSaldosTarjetaPorEDSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarSaldosTarjetaPorEDSResult" type="tns:RespuestaFidelizacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaFidelizacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MensajesCliente">
+            <s:complexType>
+              <s:sequence>
+                <s:element ref="s:schema" />
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="MensajeError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Saldos">
+            <s:complexType>
+              <s:sequence>
+                <s:element ref="s:schema" />
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="0" maxOccurs="1" name="InformacionBono">
+            <s:complexType>
+              <s:sequence>
+                <s:element ref="s:schema" />
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultarInformacionPremioBono">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codEstacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numero" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idtipoIdentificadorFidelizacion" type="tns:TipoIdentificadorFidelizacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="TipoIdentificadorFidelizacion">
+        <s:restriction base="s:string">
+          <s:enumeration value="Tarjeta" />
+          <s:enumeration value="NroConductor" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ConsultarInformacionPremioBonoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarInformacionPremioBonoResult" type="tns:RespuestaInformacionPremio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaInformacionPremio">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdPremio" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorUnitarioPremio" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultarSaldosTarjetaConIdentificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codEstacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rut" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarSaldosTarjetaConIdentificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarSaldosTarjetaConIdentificacionResult" type="tns:RespuestaFidelizacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutorizarRedencionPremioBono">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codEstacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numero" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="recibo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="valor" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidadPremio" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="idPremio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idTipoIdentificador" type="tns:TipoIdentificadorFidelizacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutorizarRedencionPremioBonoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AutorizarRedencionPremioBonoResult" type="tns:RespuestaRedencionBono" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaRedencionBono">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NroTarjeta" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdAutorizacion" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Autorizado" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="MensajeError" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValorUnitarioPremio" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PuntosCanjeados" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CantidadBonosRedimidos" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AutorizarRedencionBonos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codEstacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="recibo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="valor" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutorizarRedencionBonosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AutorizarRedencionBonosResult" type="tns:RespuestaRedencionBono" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutorizarRedencionBonosConIdentificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codEstacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rut" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="recibo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="valor" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutorizarRedencionBonosConIdentificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AutorizarRedencionBonosConIdentificacionResult" type="tns:RespuestaRedencionBono" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmacionRedencionBonos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codEstacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="recibo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idAutorizacionFidelizacion" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="idConfirmacionEds" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="valor" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmacionRedencionBonosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmacionRedencionBonosResult" type="tns:RespuestaRedencion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaRedencion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Autorizado" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="MensajeError" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CancelarRedencionBonos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codEstacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tarjeta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="recibo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="valor" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelarRedencionBonosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelarRedencionBonosResult" type="tns:RespuestaRedencion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RegistrarVentaFidelizadaSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarVentaFidelizada" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarVentaFidelizadaSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarVentaFidelizadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarVentaFidelizadaPorNroConductorSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarVentaFidelizadaPorNroConductor" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarVentaFidelizadaPorNroConductorSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarVentaFidelizadaPorNroConductorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSaldosTarjetaPorEDSSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarSaldosTarjetaPorEDS" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSaldosTarjetaPorEDSSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarSaldosTarjetaPorEDSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInformacionPremioBonoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarInformacionPremioBono" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarInformacionPremioBonoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarInformacionPremioBonoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSaldosTarjetaConIdentificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarSaldosTarjetaConIdentificacion" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarSaldosTarjetaConIdentificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarSaldosTarjetaConIdentificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarRedencionPremioBonoSoapIn">
+    <wsdl:part name="parameters" element="tns:AutorizarRedencionPremioBono" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarRedencionPremioBonoSoapOut">
+    <wsdl:part name="parameters" element="tns:AutorizarRedencionPremioBonoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarRedencionBonosSoapIn">
+    <wsdl:part name="parameters" element="tns:AutorizarRedencionBonos" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarRedencionBonosSoapOut">
+    <wsdl:part name="parameters" element="tns:AutorizarRedencionBonosResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarRedencionBonosConIdentificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:AutorizarRedencionBonosConIdentificacion" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarRedencionBonosConIdentificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:AutorizarRedencionBonosConIdentificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmacionRedencionBonosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmacionRedencionBonos" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmacionRedencionBonosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmacionRedencionBonosResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelarRedencionBonosSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelarRedencionBonos" />
+  </wsdl:message>
+  <wsdl:message name="CancelarRedencionBonosSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelarRedencionBonosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FidelizacionSoap">
+    <wsdl:operation name="RegistrarVentaFidelizada">
+      <wsdl:input message="tns:RegistrarVentaFidelizadaSoapIn" />
+      <wsdl:output message="tns:RegistrarVentaFidelizadaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarVentaFidelizadaPorNroConductor">
+      <wsdl:input message="tns:RegistrarVentaFidelizadaPorNroConductorSoapIn" />
+      <wsdl:output message="tns:RegistrarVentaFidelizadaPorNroConductorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSaldosTarjetaPorEDS">
+      <wsdl:input message="tns:ConsultarSaldosTarjetaPorEDSSoapIn" />
+      <wsdl:output message="tns:ConsultarSaldosTarjetaPorEDSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInformacionPremioBono">
+      <wsdl:input message="tns:ConsultarInformacionPremioBonoSoapIn" />
+      <wsdl:output message="tns:ConsultarInformacionPremioBonoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSaldosTarjetaConIdentificacion">
+      <wsdl:input message="tns:ConsultarSaldosTarjetaConIdentificacionSoapIn" />
+      <wsdl:output message="tns:ConsultarSaldosTarjetaConIdentificacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarRedencionPremioBono">
+      <wsdl:input message="tns:AutorizarRedencionPremioBonoSoapIn" />
+      <wsdl:output message="tns:AutorizarRedencionPremioBonoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarRedencionBonos">
+      <wsdl:input message="tns:AutorizarRedencionBonosSoapIn" />
+      <wsdl:output message="tns:AutorizarRedencionBonosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarRedencionBonosConIdentificacion">
+      <wsdl:input message="tns:AutorizarRedencionBonosConIdentificacionSoapIn" />
+      <wsdl:output message="tns:AutorizarRedencionBonosConIdentificacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmacionRedencionBonos">
+      <wsdl:input message="tns:ConfirmacionRedencionBonosSoapIn" />
+      <wsdl:output message="tns:ConfirmacionRedencionBonosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelarRedencionBonos">
+      <wsdl:input message="tns:CancelarRedencionBonosSoapIn" />
+      <wsdl:output message="tns:CancelarRedencionBonosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FidelizacionSoap" type="tns:FidelizacionSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegistrarVentaFidelizada">
+      <soap:operation soapAction="http://tempuri.org/RegistrarVentaFidelizada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarVentaFidelizadaPorNroConductor">
+      <soap:operation soapAction="http://tempuri.org/RegistrarVentaFidelizadaPorNroConductor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSaldosTarjetaPorEDS">
+      <soap:operation soapAction="http://tempuri.org/ConsultarSaldosTarjetaPorEDS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInformacionPremioBono">
+      <soap:operation soapAction="http://tempuri.org/ConsultarInformacionPremioBono" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSaldosTarjetaConIdentificacion">
+      <soap:operation soapAction="http://tempuri.org/ConsultarSaldosTarjetaConIdentificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarRedencionPremioBono">
+      <soap:operation soapAction="http://tempuri.org/AutorizarRedencionPremioBono" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarRedencionBonos">
+      <soap:operation soapAction="http://tempuri.org/AutorizarRedencionBonos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarRedencionBonosConIdentificacion">
+      <soap:operation soapAction="http://tempuri.org/AutorizarRedencionBonosConIdentificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmacionRedencionBonos">
+      <soap:operation soapAction="http://tempuri.org/ConfirmacionRedencionBonos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarRedencionBonos">
+      <soap:operation soapAction="http://tempuri.org/CancelarRedencionBonos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FidelizacionSoap12" type="tns:FidelizacionSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegistrarVentaFidelizada">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarVentaFidelizada" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarVentaFidelizadaPorNroConductor">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarVentaFidelizadaPorNroConductor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSaldosTarjetaPorEDS">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarSaldosTarjetaPorEDS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarInformacionPremioBono">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarInformacionPremioBono" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarSaldosTarjetaConIdentificacion">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarSaldosTarjetaConIdentificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarRedencionPremioBono">
+      <soap12:operation soapAction="http://tempuri.org/AutorizarRedencionPremioBono" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarRedencionBonos">
+      <soap12:operation soapAction="http://tempuri.org/AutorizarRedencionBonos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarRedencionBonosConIdentificacion">
+      <soap12:operation soapAction="http://tempuri.org/AutorizarRedencionBonosConIdentificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmacionRedencionBonos">
+      <soap12:operation soapAction="http://tempuri.org/ConfirmacionRedencionBonos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelarRedencionBonos">
+      <soap12:operation soapAction="http://tempuri.org/CancelarRedencionBonos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Fidelizacion">
+    <wsdl:port name="FidelizacionSoap" binding="tns:FidelizacionSoap">
+      <soap:address location="http://localhost:49648/ServiciosFidelizacion/Fidelizacion.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FidelizacionSoap12" binding="tns:FidelizacionSoap12">
+      <soap12:address location="http://localhost:49648/ServiciosFidelizacion/Fidelizacion.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

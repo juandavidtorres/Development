@@ -1,0 +1,106 @@
+﻿<Page
+    x:Name="pageRoot"
+    x:Class="SATELITELite.MenuConfiguracion"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SATELITELite"
+    xmlns:common="using:SATELITELite.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"    
+    
+    >
+
+    <!--
+        This grid acts as a root panel for the page that defines two rows:
+        * Row 0 contains the back button and page title
+        * Row 1 contains the rest of the page layout
+    -->
+
+
+    <!-- Back button and page title -->
+
+
+
+
+    <Grid  >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/menuprincipal/FondoSAUCE600x800.png" Stretch="UniformToFill" />
+
+        </Grid.Background>
+        <GridView SelectionMode="None" x:Name="menu_contenedor" Grid.Row="2"    VerticalAlignment="Top" HorizontalAlignment="Center" Width="Auto"  >
+            <StackPanel Orientation="Horizontal" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid Height="Auto" Width="Auto" >                  
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />                        
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Vertical" Grid.Row="0"   HorizontalAlignment="Stretch" Height="Auto" Width="Auto">                        
+                        <StackPanel Orientation="Horizontal"  Width="Auto" Height="Auto" HorizontalAlignment="Left">
+                            <StackPanel Orientation="Vertical"  Width="Auto"  HorizontalAlignment="Left" VerticalAlignment="Center" >
+                                <TextBlock x:Name="lblIsla"  Foreground="#FF0C0101"  FontSize="18"   TextAlignment="Left" HorizontalAlignment="Left"  FontWeight="Bold" Width="100" >
+            			            <Run Text="Isla:"/>
+                                </TextBlock>
+                                <TextBox x:Name="txtIsla" HorizontalAlignment="Left" BorderBrush="Gray" BorderThickness="1"  Width="350"  />
+                                <TextBlock Foreground="#FF0C0101"  FontSize="18"  Width="Auto" Height="10"/>
+
+                                <TextBlock x:Name="lblImpresora"  Foreground="#FF0C0101"  FontSize="18"   TextAlignment="Left" HorizontalAlignment="Left"  FontWeight="Bold" Width="100" >
+            			            <Run Text="Impresora:"/>
+                                </TextBlock>
+                                <TextBox x:Name="txtImpresora" HorizontalAlignment="Left" BorderBrush="Gray" BorderThickness="1"  Width="350"  />
+                                <TextBlock Foreground="#FF0C0101"  FontSize="18"  Width="Auto" Height="10"/>
+
+                                <TextBlock x:Name="lblServicio"  Foreground="#FF0C0101"  FontSize="18"   TextAlignment="Left" HorizontalAlignment="Left"  FontWeight="Bold" Width="100" >
+            			            <Run Text="Servicio:"/>
+                                </TextBlock>
+                                <TextBox x:Name="txtServicio" HorizontalAlignment="Left" BorderBrush="Gray" BorderThickness="1"  Width="350"  />
+                                <TextBlock Foreground="#FF0C0101"  FontSize="18"  Width="Auto" Height="10"/>
+                                
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal"  Width="Auto" Name="sesionVlrSobre" HorizontalAlignment="Center">
+                            <Button >
+                                <Image Source="Assets/opciones/CerrarAplicacion.png" Height="68" Width="134" />
+                            </Button>
+                            <Button >
+                                <Image Source="Assets/opciones/Aceptar1.png" Height="68" Width="134" />
+                            </Button>                           
+                        </StackPanel>
+
+                    </StackPanel>
+
+                </Grid>
+
+            </StackPanel>
+        </GridView>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="140"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="Assets/encabezados/Configuracion.png" Width="357" />
+                <!--<Button x:Name="backButton" Grid.Column="1" Margin="10,10,10,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
+                        VerticalAlignment="Top">
+                        
+                    <Image Source="Assets/BotonAtras.png" Width="140" Height="140" />
+                </Button>-->
+                <Button Grid.Column="1" x:Name="backButton" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}">
+                    <Image Source="Assets/BotonAtras.png" />
+                </Button>
+            </Grid>
+
+        </StackPanel>
+
+    </Grid>
+
+
+</Page>

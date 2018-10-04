@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9C23F29D-819C-4797-A6CF-617F0926D530}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>PosStation.DisplayStation.My.MyApplication</StartupObject>
+    <RootNamespace>PosStation.DisplayStation</RootNamespace>
+    <AssemblyName>DisplayStation</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <ApplicationIcon>Display.ico</ApplicationIcon>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>DisplayStation.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>..\Reglas Basicas.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>DisplayStation.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>DisplayStation.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>..\Reglas Basicas.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>DisplayStation.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging.Database">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder">
+      <HintPath>..\..\..\..\Librerias\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CaraControl.Designer.vb">
+      <DependentUpon>CaraControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CaraControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DatosStation.Designer.vb">
+      <DependentUpon>DatosStation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DatosStation.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmServicio.Designer.vb">
+      <DependentUpon>frmServicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmServicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IServiceSharedEvent.vb" />
+    <Compile Include="MainDisplay.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainDisplay.Designer.vb">
+      <DependentUpon>MainDisplay.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ProductoDisplay.Designer.vb">
+      <DependentUpon>ProductoDisplay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProductoDisplay.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ServiceSharedEvent.vb" />
+    <Compile Include="Storage.vb" />
+    <Compile Include="VentasEstacion.Designer.vb">
+      <DependentUpon>VentasEstacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VentasEstacion.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VistaEstacion.Designer.vb">
+      <DependentUpon>VistaEstacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VistaEstacion.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CaraControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CaraControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosStation.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DatosStation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmServicio.resx">
+      <DependentUpon>frmServicio.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainDisplay.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainDisplay.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductoDisplay.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ProductoDisplay.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentasEstacion.resx">
+      <DependentUpon>VentasEstacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaEstacion.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>VistaEstacion.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\CaraDisplay.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\FrameInferior.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\FrameInf.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\letrasFrameInferior.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Images\frameIzquierdo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Surtidores3232.png" />
+    <None Include="Resources\Salir.png" />
+    <None Include="Resources\Encabezado.png" />
+    <None Include="Resources\Dinero.png" />
+    <None Include="Resources\Gas.png" />
+    <None Include="Resources\Gasolina.png" />
+    <None Include="Resources\Abierto.png" />
+    <None Include="Resources\Cerrado.png" />
+    <None Include="Resources\Cerrar.png" />
+    <None Include="Resources\BarraInferior.png" />
+    <None Include="Resources\Encabezado3.bmp" />
+    <None Include="Resources\Encabezado975.png" />
+    <None Include="Resources\FondoDisplay.png" />
+    <None Include="Resources\Campo.png" />
+    <Content Include="Display.ico" />
+    <None Include="Resources\Busqueda.png" />
+    <None Include="Resources\Cancel.png" />
+    <Content Include="Resources\opts_32.ico" />
+    <None Include="Resources\PiedePagina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AccesoDatosPOSstation\DA_POSstation.vbproj">
+      <Project>{225233e2-f9a2-4c6c-b2cb-b9a88919cbc0}</Project>
+      <Name>DA_POSstation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Controles\Controles.csproj">
+      <Project>{3CE73096-3699-44AE-83B8-280EEDFFF5FF}</Project>
+      <Name>Controles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FabricaPosColombia\HP_FabricaColombia.vbproj">
+      <Project>{34e43672-06aa-4800-8f2e-b61a6f4cbd77}</Project>
+      <Name>HP_FabricaColombia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HelperPOSstation\HP_HelperPOSstation.vbproj">
+      <Project>{ca843156-ccfb-4e1b-aa61-1e8498a5877d}</Project>
+      <Name>HP_HelperPOSstation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NotificacionPosStation\Notificacion.csproj">
+      <Project>{e4a345c5-3355-40f9-9a82-0a18ee336ee3}</Project>
+      <Name>Notificacion</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBA">
+      <Guid>{000204EF-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>9</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

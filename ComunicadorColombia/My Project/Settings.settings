@@ -1,0 +1,96 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="RastrearTareas" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Archivo" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="NombreServicio" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">MSSQL$SQLEXPRESS</Value>
+    </Setting>
+    <Setting Name="ComunicadorChile_Comunicacion_Comunicacion" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:50050/Comunicacion.asmx</Value>
+    </Setting>
+    <Setting Name="Timer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1000</Value>
+    </Setting>
+    <Setting Name="Ventas" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Turnos" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CierreDia" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Reversiones" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Abonos" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Canastilla" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="NotasCredito" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="VentasNumeros" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="EnviarTurnoCDC" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="EnviarCierreDiaCDC" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ComunicadorCDCIG_CDCIG_Comunicacion" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost/ComunicacionesWS/Comunicacion.asmx</Value>
+    </Setting>
+    <Setting Name="VentasPKE" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ComunicadorCDCIG_SRE_Recaudo" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:56051/WebRecaudos/Recaudo.asmx</Value>
+    </Setting>
+    <Setting Name="MovimientosCanastilla" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CDC" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="ComunicadorCDCIG_CDCIGTerpel_Comunicacion" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost/comunicacionesws/comunicacion.asmx</Value>
+    </Setting>
+    <Setting Name="VentasCombustible" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TurnosCombustible" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CierreDiaCombustible" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="EnviarTurnosTrabajo" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="TiempoTransmisionForzada" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">60</Value>
+    </Setting>
+    <Setting Name="NotasCreditoSodexo" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ComunicadorCDCIGTerpel_CDCIGTerpel_Comunicacion" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">ComunicadorCDCIGTerpel_CDCIGTerpel_Comunicacion</Value>
+    </Setting>
+    <Setting Name="ComunicadorCRMColombia_CDCIGTerpel_Comunicacion" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/ComunicacionesWs/Comunicacion.asmx</Value>
+    </Setting>
+    <Setting Name="MaxEnvioGanamillones" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

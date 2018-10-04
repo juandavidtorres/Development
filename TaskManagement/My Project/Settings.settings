@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="TimeLoad" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="TimeOutSuic" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">600</Value>
+    </Setting>
+    <Setting Name="NombreServicio" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">MSSQL$SQLEXPRESS</Value>
+    </Setting>
+    <Setting Name="RutaSuic" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\SUIC</Value>
+    </Setting>
+    <Setting Name="NombreArchivoSuic" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">cert</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

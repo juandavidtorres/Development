@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="InsertarRecaudo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdTipo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Placa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Conductor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Estacion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fecha" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdEmpresa" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Movil" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarRecaudoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertarRecaudoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarConsolidadoDiario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oDs">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarConsolidadoDiarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertarConsolidadoDiarioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarDatosRecaudo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idEmpresa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RUC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="placa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidarDatosRecaudoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidarDatosRecaudoResult" type="tns:RespuestaSRE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaSRE">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Autorizado" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="MensajeError" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertarRecaudoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarRecaudo" />
+  </wsdl:message>
+  <wsdl:message name="InsertarRecaudoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarRecaudoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarConsolidadoDiarioSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarConsolidadoDiario" />
+  </wsdl:message>
+  <wsdl:message name="InsertarConsolidadoDiarioSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarConsolidadoDiarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarDatosRecaudoSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidarDatosRecaudo" />
+  </wsdl:message>
+  <wsdl:message name="ValidarDatosRecaudoSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidarDatosRecaudoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RecaudoSoap">
+    <wsdl:operation name="InsertarRecaudo">
+      <wsdl:input message="tns:InsertarRecaudoSoapIn" />
+      <wsdl:output message="tns:InsertarRecaudoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarConsolidadoDiario">
+      <wsdl:input message="tns:InsertarConsolidadoDiarioSoapIn" />
+      <wsdl:output message="tns:InsertarConsolidadoDiarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarDatosRecaudo">
+      <wsdl:input message="tns:ValidarDatosRecaudoSoapIn" />
+      <wsdl:output message="tns:ValidarDatosRecaudoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RecaudoSoap" type="tns:RecaudoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertarRecaudo">
+      <soap:operation soapAction="http://tempuri.org/InsertarRecaudo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarConsolidadoDiario">
+      <soap:operation soapAction="http://tempuri.org/InsertarConsolidadoDiario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarDatosRecaudo">
+      <soap:operation soapAction="http://tempuri.org/ValidarDatosRecaudo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RecaudoSoap12" type="tns:RecaudoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertarRecaudo">
+      <soap12:operation soapAction="http://tempuri.org/InsertarRecaudo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarConsolidadoDiario">
+      <soap12:operation soapAction="http://tempuri.org/InsertarConsolidadoDiario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarDatosRecaudo">
+      <soap12:operation soapAction="http://tempuri.org/ValidarDatosRecaudo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Recaudo">
+    <wsdl:port name="RecaudoSoap" binding="tns:RecaudoSoap">
+      <soap:address location="http://localhost/WebRecaudos/Recaudo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RecaudoSoap12" binding="tns:RecaudoSoap12">
+      <soap12:address location="http://localhost/WebRecaudos/Recaudo.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

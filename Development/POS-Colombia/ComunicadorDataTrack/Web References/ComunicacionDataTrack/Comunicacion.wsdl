@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://190.24.175.109:2998/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://190.24.175.109:2998/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://190.24.175.109:2998/">
+      <s:element name="GetLastPosition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassw" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPlate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastPositionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLastPositionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastPositionWithOdometer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassw" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPlate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastPositionWithOdometerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLastPositionWithOdometerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastPositionID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassw" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastPositionIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLastPositionIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastVehicleData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassw" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPlate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastVehicleDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLastVehicleDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetVehicleSellData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassw" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DatosVenta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetVehicleSellDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetVehicleSellDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVideo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sIdVehiculo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCamara" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFechaFinal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVideoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVideoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retrieveEventStringV3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sUser" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPlaca" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEvento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFHInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFHFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retrieveEventStringV3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retrieveEventStringV3Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetLastPositionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastPosition" />
+  </wsdl:message>
+  <wsdl:message name="GetLastPositionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastPositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastPositionWithOdometerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastPositionWithOdometer" />
+  </wsdl:message>
+  <wsdl:message name="GetLastPositionWithOdometerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastPositionWithOdometerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastPositionIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastPositionID" />
+  </wsdl:message>
+  <wsdl:message name="GetLastPositionIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastPositionIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastVehicleDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastVehicleData" />
+  </wsdl:message>
+  <wsdl:message name="GetLastVehicleDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastVehicleDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetVehicleSellDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SetVehicleSellData" />
+  </wsdl:message>
+  <wsdl:message name="SetVehicleSellDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SetVehicleSellDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVideoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVideo" />
+  </wsdl:message>
+  <wsdl:message name="GetVideoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVideoResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieveEventStringV3SoapIn">
+    <wsdl:part name="parameters" element="tns:retrieveEventStringV3" />
+  </wsdl:message>
+  <wsdl:message name="retrieveEventStringV3SoapOut">
+    <wsdl:part name="parameters" element="tns:retrieveEventStringV3Response" />
+  </wsdl:message>
+  <wsdl:message name="GetLastPositionHttpGetIn">
+    <wsdl:part name="sUser" type="s:string" />
+    <wsdl:part name="sPassw" type="s:string" />
+    <wsdl:part name="sPlate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLastPositionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLastPositionWithOdometerHttpGetIn">
+    <wsdl:part name="sUser" type="s:string" />
+    <wsdl:part name="sPassw" type="s:string" />
+    <wsdl:part name="sPlate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLastPositionWithOdometerHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLastPositionIDHttpGetIn">
+    <wsdl:part name="sUser" type="s:string" />
+    <wsdl:part name="sPassw" type="s:string" />
+    <wsdl:part name="sID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLastPositionIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLastVehicleDataHttpGetIn">
+    <wsdl:part name="sUser" type="s:string" />
+    <wsdl:part name="sPassw" type="s:string" />
+    <wsdl:part name="sPlate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLastVehicleDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetVehicleSellDataHttpGetIn">
+    <wsdl:part name="sUser" type="s:string" />
+    <wsdl:part name="sPassw" type="s:string" />
+    <wsdl:part name="DatosVenta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetVehicleSellDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetVideoHttpGetIn">
+    <wsdl:part name="sIdVehiculo" type="s:string" />
+    <wsdl:part name="sCamara" type="s:string" />
+    <wsdl:part name="sFechaInicial" type="s:string" />
+    <wsdl:part name="sFechaFinal" type="s:string" />
+    <wsdl:part name="sPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetVideoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="retrieveEventStringV3HttpGetIn">
+    <wsdl:part name="sUser" type="s:string" />
+    <wsdl:part name="sClave" type="s:string" />
+    <wsdl:part name="sPlaca" type="s:string" />
+    <wsdl:part name="sEvento" type="s:string" />
+    <wsdl:part name="sFHInicial" type="s:string" />
+    <wsdl:part name="sFHFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="retrieveEventStringV3HttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetLastPositionHttpPostIn">
+    <wsdl:part name="sUser" type="s:string" />
+    <wsdl:part name="sPassw" type="s:string" />
+    <wsdl:part name="sPlate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLastPositionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLastPositionWithOdometerHttpPostIn">
+    <wsdl:part name="sUser" type="s:string" />
+    <wsdl:part name="sPassw" type="s:string" />
+    <wsdl:part name="sPlate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLastPositionWithOdometerHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLastPositionIDHttpPostIn">
+    <wsdl:part name="sUser" type="s:string" />
+    <wsdl:part name="sPassw" type="s:string" />
+    <wsdl:part name="sID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLastPositionIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLastVehicleDataHttpPostIn">
+    <wsdl:part name="sUser" type="s:string" />
+    <wsdl:part name="sPassw" type="s:string" />
+    <wsdl:part name="sPlate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLastVehicleDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SetVehicleSellDataHttpPostIn">
+    <wsdl:part name="sUser" type="s:string" />
+    <wsdl:part name="sPassw" type="s:string" />
+    <wsdl:part name="DatosVenta" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetVehicleSellDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetVideoHttpPostIn">
+    <wsdl:part name="sIdVehiculo" type="s:string" />
+    <wsdl:part name="sCamara" type="s:string" />
+    <wsdl:part name="sFechaInicial" type="s:string" />
+    <wsdl:part name="sFechaFinal" type="s:string" />
+    <wsdl:part name="sPassword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetVideoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="retrieveEventStringV3HttpPostIn">
+    <wsdl:part name="sUser" type="s:string" />
+    <wsdl:part name="sClave" type="s:string" />
+    <wsdl:part name="sPlaca" type="s:string" />
+    <wsdl:part name="sEvento" type="s:string" />
+    <wsdl:part name="sFHInicial" type="s:string" />
+    <wsdl:part name="sFHFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="retrieveEventStringV3HttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:portType name="VideoDataSoap">
+    <wsdl:operation name="GetLastPosition">
+      <wsdl:input message="tns:GetLastPositionSoapIn" />
+      <wsdl:output message="tns:GetLastPositionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastPositionWithOdometer">
+      <wsdl:input message="tns:GetLastPositionWithOdometerSoapIn" />
+      <wsdl:output message="tns:GetLastPositionWithOdometerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastPositionID">
+      <wsdl:input message="tns:GetLastPositionIDSoapIn" />
+      <wsdl:output message="tns:GetLastPositionIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastVehicleData">
+      <wsdl:input message="tns:GetLastVehicleDataSoapIn" />
+      <wsdl:output message="tns:GetLastVehicleDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetVehicleSellData">
+      <wsdl:input message="tns:SetVehicleSellDataSoapIn" />
+      <wsdl:output message="tns:SetVehicleSellDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVideo">
+      <wsdl:input message="tns:GetVideoSoapIn" />
+      <wsdl:output message="tns:GetVideoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveEventStringV3">
+      <wsdl:input message="tns:retrieveEventStringV3SoapIn" />
+      <wsdl:output message="tns:retrieveEventStringV3SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="VideoDataHttpGet">
+    <wsdl:operation name="GetLastPosition">
+      <wsdl:input message="tns:GetLastPositionHttpGetIn" />
+      <wsdl:output message="tns:GetLastPositionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastPositionWithOdometer">
+      <wsdl:input message="tns:GetLastPositionWithOdometerHttpGetIn" />
+      <wsdl:output message="tns:GetLastPositionWithOdometerHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastPositionID">
+      <wsdl:input message="tns:GetLastPositionIDHttpGetIn" />
+      <wsdl:output message="tns:GetLastPositionIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastVehicleData">
+      <wsdl:input message="tns:GetLastVehicleDataHttpGetIn" />
+      <wsdl:output message="tns:GetLastVehicleDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetVehicleSellData">
+      <wsdl:input message="tns:SetVehicleSellDataHttpGetIn" />
+      <wsdl:output message="tns:SetVehicleSellDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVideo">
+      <wsdl:input message="tns:GetVideoHttpGetIn" />
+      <wsdl:output message="tns:GetVideoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveEventStringV3">
+      <wsdl:input message="tns:retrieveEventStringV3HttpGetIn" />
+      <wsdl:output message="tns:retrieveEventStringV3HttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="VideoDataHttpPost">
+    <wsdl:operation name="GetLastPosition">
+      <wsdl:input message="tns:GetLastPositionHttpPostIn" />
+      <wsdl:output message="tns:GetLastPositionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastPositionWithOdometer">
+      <wsdl:input message="tns:GetLastPositionWithOdometerHttpPostIn" />
+      <wsdl:output message="tns:GetLastPositionWithOdometerHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastPositionID">
+      <wsdl:input message="tns:GetLastPositionIDHttpPostIn" />
+      <wsdl:output message="tns:GetLastPositionIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastVehicleData">
+      <wsdl:input message="tns:GetLastVehicleDataHttpPostIn" />
+      <wsdl:output message="tns:GetLastVehicleDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetVehicleSellData">
+      <wsdl:input message="tns:SetVehicleSellDataHttpPostIn" />
+      <wsdl:output message="tns:SetVehicleSellDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVideo">
+      <wsdl:input message="tns:GetVideoHttpPostIn" />
+      <wsdl:output message="tns:GetVideoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieveEventStringV3">
+      <wsdl:input message="tns:retrieveEventStringV3HttpPostIn" />
+      <wsdl:output message="tns:retrieveEventStringV3HttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VideoDataSoap" type="tns:VideoDataSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLastPosition">
+      <soap:operation soapAction="http://190.24.175.109:2998/GetLastPosition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastPositionWithOdometer">
+      <soap:operation soapAction="http://190.24.175.109:2998/GetLastPositionWithOdometer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastPositionID">
+      <soap:operation soapAction="http://190.24.175.109:2998/GetLastPositionID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastVehicleData">
+      <soap:operation soapAction="http://190.24.175.109:2998/GetLastVehicleData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetVehicleSellData">
+      <soap:operation soapAction="http://190.24.175.109:2998/SetVehicleSellData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVideo">
+      <soap:operation soapAction="http://190.24.175.109:2998/GetVideo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveEventStringV3">
+      <soap:operation soapAction="http://190.24.175.109:2998/retrieveEventStringV3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VideoDataSoap12" type="tns:VideoDataSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLastPosition">
+      <soap12:operation soapAction="http://190.24.175.109:2998/GetLastPosition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastPositionWithOdometer">
+      <soap12:operation soapAction="http://190.24.175.109:2998/GetLastPositionWithOdometer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastPositionID">
+      <soap12:operation soapAction="http://190.24.175.109:2998/GetLastPositionID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastVehicleData">
+      <soap12:operation soapAction="http://190.24.175.109:2998/GetLastVehicleData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetVehicleSellData">
+      <soap12:operation soapAction="http://190.24.175.109:2998/SetVehicleSellData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVideo">
+      <soap12:operation soapAction="http://190.24.175.109:2998/GetVideo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveEventStringV3">
+      <soap12:operation soapAction="http://190.24.175.109:2998/retrieveEventStringV3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VideoDataHttpGet" type="tns:VideoDataHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetLastPosition">
+      <http:operation location="/GetLastPosition" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastPositionWithOdometer">
+      <http:operation location="/GetLastPositionWithOdometer" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastPositionID">
+      <http:operation location="/GetLastPositionID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastVehicleData">
+      <http:operation location="/GetLastVehicleData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetVehicleSellData">
+      <http:operation location="/SetVehicleSellData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVideo">
+      <http:operation location="/GetVideo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveEventStringV3">
+      <http:operation location="/retrieveEventStringV3" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VideoDataHttpPost" type="tns:VideoDataHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetLastPosition">
+      <http:operation location="/GetLastPosition" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastPositionWithOdometer">
+      <http:operation location="/GetLastPositionWithOdometer" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastPositionID">
+      <http:operation location="/GetLastPositionID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastVehicleData">
+      <http:operation location="/GetLastVehicleData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetVehicleSellData">
+      <http:operation location="/SetVehicleSellData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVideo">
+      <http:operation location="/GetVideo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveEventStringV3">
+      <http:operation location="/retrieveEventStringV3" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VideoData">
+    <wsdl:port name="VideoDataSoap" binding="tns:VideoDataSoap">
+      <soap:address location="http://190.24.175.109:2998/VideoData.asmx" />
+    </wsdl:port>
+    <wsdl:port name="VideoDataSoap12" binding="tns:VideoDataSoap12">
+      <soap12:address location="http://190.24.175.109:2998/VideoData.asmx" />
+    </wsdl:port>
+    <wsdl:port name="VideoDataHttpGet" binding="tns:VideoDataHttpGet">
+      <http:address location="http://190.24.175.109:2998/VideoData.asmx" />
+    </wsdl:port>
+    <wsdl:port name="VideoDataHttpPost" binding="tns:VideoDataHttpPost">
+      <http:address location="http://190.24.175.109:2998/VideoData.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

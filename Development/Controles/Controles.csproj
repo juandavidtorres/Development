@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3CE73096-3699-44AE-83B8-280EEDFFF5FF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Controles</RootNamespace>
+    <AssemblyName>UIControles</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\Reglas Basicas.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\Controles.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\Reglas Basicas.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\Controles.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DatosGenerales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DatosGenerales.designer.cs">
+      <DependentUpon>DatosGenerales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAyuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAyuda.Designer.cs">
+      <DependentUpon>frmAyuda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmServicio.designer.cs">
+      <DependentUpon>frmServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FSConfigColombia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FSConfigColombia.Designer.cs">
+      <DependentUpon>FSConfigColombia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GascoDatosGenerales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GascoDatosGenerales.Designer.cs">
+      <DependentUpon>GascoDatosGenerales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GasStationDatosGenerales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GasStationDatosGenerales.Designer.cs">
+      <DependentUpon>GasStationDatosGenerales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsInicioSesion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsInicioSesion.designer.cs">
+      <DependentUpon>gsInicioSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsLoggin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsLoggin.Designer.cs">
+      <DependentUpon>gsLoggin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeaderRenderer.cs" />
+    <Compile Include="Inputbox.cs" />
+    <Compile Include="MnuDSPosColombia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MnuDSPosColombia.Designer.cs">
+      <DependentUpon>MnuDSPosColombia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityStationColombia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SecurityStationColombia.Designer.cs">
+      <DependentUpon>SecurityStationColombia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TerpellDatosGenerales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TerpellDatosGenerales.Designer.cs">
+      <DependentUpon>TerpellDatosGenerales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TitleStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DataAdminMenuColombia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataAdminMenuColombia.Designer.cs">
+      <DependentUpon>DataAdminMenuColombia.cs</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseView.resx">
+      <DependentUpon>BaseView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomMenuStrip.resx">
+      <DependentUpon>CustomMenuStrip.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatosGenerales.resx">
+      <DependentUpon>DatosGenerales.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAyuda.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAyuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmServicio.resx">
+      <DependentUpon>frmServicio.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSConfigColombia.resx">
+      <DependentUpon>FSConfigColombia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GascoDatosGenerales.resx">
+      <DependentUpon>GascoDatosGenerales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GasStationDatosGenerales.resx">
+      <DependentUpon>GasStationDatosGenerales.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsInicioSesion.resx">
+      <DependentUpon>gsInicioSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsLoggin.resx">
+      <DependentUpon>gsLoggin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MnuDSPosColombia.resx">
+      <DependentUpon>MnuDSPosColombia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecurityStationColombia.resx">
+      <DependentUpon>SecurityStationColombia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TerpellDatosGenerales.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TerpellDatosGenerales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataAdminMenuColombia.resx">
+      <DependentUpon>DataAdminMenuColombia.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Left_logo8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gasolutions_Terpel barra izquierda parte inferior_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Otro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apply_f2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sesion 48x48.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aceptar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aceptar48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salir48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seguridad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seguridad48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Encabezado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PiedePagina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lateral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IniciodeSesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Security.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CambiarContrasena.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DesbloquearUsuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Permisos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AdministraciondeEDS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CreditosNEW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Estacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gerenciamiento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GestiondeTurnos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Otros.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lectores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Liquidos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SalirNEW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restricciones %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Roles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RolesUsuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UnidadesdeMedida.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SobreTasa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tarjetas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TRM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Configuracion2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FormaPago.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OrdendePedido.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Devoluciones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Financieras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kilometraje.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cheques.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Identificador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MnuVehiculo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MnuConsignacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MnuTipoVehiculo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MnuTrasnportadora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VentasRecuperadas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrecioCliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Resoluciones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FabricaPosColombia\HP_FabricaColombia.vbproj">
+      <Project>{34e43672-06aa-4800-8f2e-b61a6f4cbd77}</Project>
+      <Name>HP_FabricaColombia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HelperPOSstation\HP_HelperPOSstation.vbproj">
+      <Project>{ca843156-ccfb-4e1b-aa61-1e8498a5877d}</Project>
+      <Name>HP_HelperPOSstation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnSurtidores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnGasolina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnGas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAbierto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnCerrado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnSalir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnDinero.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

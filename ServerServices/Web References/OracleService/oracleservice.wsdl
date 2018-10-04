@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="POSstation.OracleWebService" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="POSstation.OracleWebService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="POSstation.OracleWebService">
+      <s:element name="RegistrarVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="estacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrato" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fecha" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="recibo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="hora" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="manguera" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="producto" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="precio" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="total" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipoContrato" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="surtidor" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tarjeta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="factor" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="ecopesos" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarVentaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarSaldoTarjeta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tarjeta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarSaldoTarjetaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarSaldoTarjetaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarSaldoTarjeta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="contrato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tarjeta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ecoPesos" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarSaldoTarjetaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarSaldoTarjetaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SincronizarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="documento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipoDocumento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefonoCasa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefonoOficina" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="celular" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoPostal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="colonia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="municipio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rfc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="diasCredito" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="fisMor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="titular" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SincronizarClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SincronizarClienteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarClientePorId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarClientePorIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarClientePorIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarClientePorNombre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ciudad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarClientePorNombreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarClientePorNombreResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarClientePorContrato">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="contrato" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarClientePorContratoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarClientePorContratoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarClientePorPlaca">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="placa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarClientePorPlacaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarClientePorPlacaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SincronizarVehiculo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="placa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carroceria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="marca" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="modelo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serie" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="motor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ruta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="estacion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaContrato" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="plan" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cilindros" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="porcentajeRecaudo" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrato" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idVehiculo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cliente" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaProximoMant" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SincronizarVehiculoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SincronizarVehiculoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SincronizarIdentificador">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idIdentificador" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rom" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tipoIdentificador" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="estado" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrato" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SincronizarIdentificadorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SincronizarIdentificadorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarVehiculoPorIdCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarVehiculoPorIdClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarVehiculoPorIdClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarVehiculoPorCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ciudad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarVehiculoPorClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarVehiculoPorClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarVehiculoPorPlaca">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="placa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarVehiculoPorPlacaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarVehiculoPorPlacaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarVehiculoPorContrato">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="contrato" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperarVehiculoPorContratoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperarVehiculoPorContratoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RegistrarVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarVenta" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarSaldoTarjetaSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarSaldoTarjeta" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarSaldoTarjetaSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarSaldoTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarSaldoTarjetaSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarSaldoTarjeta" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarSaldoTarjetaSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarSaldoTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="SincronizarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:SincronizarCliente" />
+  </wsdl:message>
+  <wsdl:message name="SincronizarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:SincronizarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarClientePorIdSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarClientePorId" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarClientePorIdSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarClientePorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarClientePorNombreSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarClientePorNombre" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarClientePorNombreSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarClientePorNombreResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarClientePorContratoSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarClientePorContrato" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarClientePorContratoSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarClientePorContratoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarClientePorPlacaSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarClientePorPlaca" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarClientePorPlacaSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarClientePorPlacaResponse" />
+  </wsdl:message>
+  <wsdl:message name="SincronizarVehiculoSoapIn">
+    <wsdl:part name="parameters" element="tns:SincronizarVehiculo" />
+  </wsdl:message>
+  <wsdl:message name="SincronizarVehiculoSoapOut">
+    <wsdl:part name="parameters" element="tns:SincronizarVehiculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SincronizarIdentificadorSoapIn">
+    <wsdl:part name="parameters" element="tns:SincronizarIdentificador" />
+  </wsdl:message>
+  <wsdl:message name="SincronizarIdentificadorSoapOut">
+    <wsdl:part name="parameters" element="tns:SincronizarIdentificadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarVehiculoPorIdClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarVehiculoPorIdCliente" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarVehiculoPorIdClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarVehiculoPorIdClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarVehiculoPorClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarVehiculoPorCliente" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarVehiculoPorClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarVehiculoPorClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarVehiculoPorPlacaSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarVehiculoPorPlaca" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarVehiculoPorPlacaSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarVehiculoPorPlacaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarVehiculoPorContratoSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperarVehiculoPorContrato" />
+  </wsdl:message>
+  <wsdl:message name="RecuperarVehiculoPorContratoSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperarVehiculoPorContratoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="OracleServiceSoap">
+    <wsdl:operation name="RegistrarVenta">
+      <wsdl:input message="tns:RegistrarVentaSoapIn" />
+      <wsdl:output message="tns:RegistrarVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarSaldoTarjeta">
+      <wsdl:input message="tns:RecuperarSaldoTarjetaSoapIn" />
+      <wsdl:output message="tns:RecuperarSaldoTarjetaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarSaldoTarjeta">
+      <wsdl:input message="tns:RegistrarSaldoTarjetaSoapIn" />
+      <wsdl:output message="tns:RegistrarSaldoTarjetaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SincronizarCliente">
+      <wsdl:input message="tns:SincronizarClienteSoapIn" />
+      <wsdl:output message="tns:SincronizarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarClientePorId">
+      <wsdl:input message="tns:RecuperarClientePorIdSoapIn" />
+      <wsdl:output message="tns:RecuperarClientePorIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarClientePorNombre">
+      <wsdl:input message="tns:RecuperarClientePorNombreSoapIn" />
+      <wsdl:output message="tns:RecuperarClientePorNombreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarClientePorContrato">
+      <wsdl:input message="tns:RecuperarClientePorContratoSoapIn" />
+      <wsdl:output message="tns:RecuperarClientePorContratoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarClientePorPlaca">
+      <wsdl:input message="tns:RecuperarClientePorPlacaSoapIn" />
+      <wsdl:output message="tns:RecuperarClientePorPlacaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SincronizarVehiculo">
+      <wsdl:input message="tns:SincronizarVehiculoSoapIn" />
+      <wsdl:output message="tns:SincronizarVehiculoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SincronizarIdentificador">
+      <wsdl:input message="tns:SincronizarIdentificadorSoapIn" />
+      <wsdl:output message="tns:SincronizarIdentificadorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarVehiculoPorIdCliente">
+      <wsdl:input message="tns:RecuperarVehiculoPorIdClienteSoapIn" />
+      <wsdl:output message="tns:RecuperarVehiculoPorIdClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarVehiculoPorCliente">
+      <wsdl:input message="tns:RecuperarVehiculoPorClienteSoapIn" />
+      <wsdl:output message="tns:RecuperarVehiculoPorClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarVehiculoPorPlaca">
+      <wsdl:input message="tns:RecuperarVehiculoPorPlacaSoapIn" />
+      <wsdl:output message="tns:RecuperarVehiculoPorPlacaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarVehiculoPorContrato">
+      <wsdl:input message="tns:RecuperarVehiculoPorContratoSoapIn" />
+      <wsdl:output message="tns:RecuperarVehiculoPorContratoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OracleServiceSoap" type="tns:OracleServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegistrarVenta">
+      <soap:operation soapAction="POSstation.OracleWebService/RegistrarVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarSaldoTarjeta">
+      <soap:operation soapAction="POSstation.OracleWebService/RecuperarSaldoTarjeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarSaldoTarjeta">
+      <soap:operation soapAction="POSstation.OracleWebService/RegistrarSaldoTarjeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SincronizarCliente">
+      <soap:operation soapAction="POSstation.OracleWebService/SincronizarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarClientePorId">
+      <soap:operation soapAction="POSstation.OracleWebService/RecuperarClientePorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarClientePorNombre">
+      <soap:operation soapAction="POSstation.OracleWebService/RecuperarClientePorNombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarClientePorContrato">
+      <soap:operation soapAction="POSstation.OracleWebService/RecuperarClientePorContrato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarClientePorPlaca">
+      <soap:operation soapAction="POSstation.OracleWebService/RecuperarClientePorPlaca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SincronizarVehiculo">
+      <soap:operation soapAction="POSstation.OracleWebService/SincronizarVehiculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SincronizarIdentificador">
+      <soap:operation soapAction="POSstation.OracleWebService/SincronizarIdentificador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarVehiculoPorIdCliente">
+      <soap:operation soapAction="POSstation.OracleWebService/RecuperarVehiculoPorIdCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarVehiculoPorCliente">
+      <soap:operation soapAction="POSstation.OracleWebService/RecuperarVehiculoPorCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarVehiculoPorPlaca">
+      <soap:operation soapAction="POSstation.OracleWebService/RecuperarVehiculoPorPlaca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarVehiculoPorContrato">
+      <soap:operation soapAction="POSstation.OracleWebService/RecuperarVehiculoPorContrato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OracleServiceSoap12" type="tns:OracleServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegistrarVenta">
+      <soap12:operation soapAction="POSstation.OracleWebService/RegistrarVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarSaldoTarjeta">
+      <soap12:operation soapAction="POSstation.OracleWebService/RecuperarSaldoTarjeta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarSaldoTarjeta">
+      <soap12:operation soapAction="POSstation.OracleWebService/RegistrarSaldoTarjeta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SincronizarCliente">
+      <soap12:operation soapAction="POSstation.OracleWebService/SincronizarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarClientePorId">
+      <soap12:operation soapAction="POSstation.OracleWebService/RecuperarClientePorId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarClientePorNombre">
+      <soap12:operation soapAction="POSstation.OracleWebService/RecuperarClientePorNombre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarClientePorContrato">
+      <soap12:operation soapAction="POSstation.OracleWebService/RecuperarClientePorContrato" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarClientePorPlaca">
+      <soap12:operation soapAction="POSstation.OracleWebService/RecuperarClientePorPlaca" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SincronizarVehiculo">
+      <soap12:operation soapAction="POSstation.OracleWebService/SincronizarVehiculo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SincronizarIdentificador">
+      <soap12:operation soapAction="POSstation.OracleWebService/SincronizarIdentificador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarVehiculoPorIdCliente">
+      <soap12:operation soapAction="POSstation.OracleWebService/RecuperarVehiculoPorIdCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarVehiculoPorCliente">
+      <soap12:operation soapAction="POSstation.OracleWebService/RecuperarVehiculoPorCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarVehiculoPorPlaca">
+      <soap12:operation soapAction="POSstation.OracleWebService/RecuperarVehiculoPorPlaca" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperarVehiculoPorContrato">
+      <soap12:operation soapAction="POSstation.OracleWebService/RecuperarVehiculoPorContrato" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OracleService">
+    <wsdl:port name="OracleServiceSoap" binding="tns:OracleServiceSoap">
+      <soap:address location="http://serveroracle/oracleservice/oracleservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OracleServiceSoap12" binding="tns:OracleServiceSoap12">
+      <soap12:address location="http://serveroracle/oracleservice/oracleservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

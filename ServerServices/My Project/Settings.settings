@@ -1,0 +1,51 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="ServerServices_OracleService_OracleService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://serveroracle/oracleservice/oracleservice.asmx</Value>
+    </Setting>
+    <Setting Name="ServerServices_CDCTerpel_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:58164/ServiciosTerpel/ServicesTerpel.asmx</Value>
+    </Setting>
+    <Setting Name="ServerServices_CentroInformacion_CentroInformacion" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:49800/Servicios/CentroInformacion.asmx</Value>
+    </Setting>
+    <Setting Name="ServerServices_Comunicacion1_Comunicacion" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:49798/CDCWService/Comunicacion.asmx</Value>
+    </Setting>
+    <Setting Name="ServerServices_Fidelizacion_Fidelizacion" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:56574/ServiciosFidelizacion/Fidelizacion.asmx</Value>
+    </Setting>
+    <Setting Name="ServerServices_SRE_Recaudo" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/WebRecaudos/Recaudo.asmx</Value>
+    </Setting>
+    <Setting Name="ServerServices_SRERecaudo_SRERecaudo" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:51426/ServicioRecaudoEmpresa/SRERecaudo.asmx</Value>
+    </Setting>
+    <Setting Name="ServerServices_Comunicacion_Comunicacion" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:50050/Comunicacion.asmx</Value>
+    </Setting>
+    <Setting Name="ServerServices_ServiceInfoTaxi_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://lider386.infotaxi.co/gasolutions/service.asmx</Value>
+    </Setting>
+    <Setting Name="ServerServices_CDCPGN_ClubpgnService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:18080/clubpgnws/clubpgn</Value>
+    </Setting>
+    <Setting Name="ServerServices_CDIChile_Comunicacion" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:54430/CDCChile/Comunicacion.asmx</Value>
+    </Setting>
+    <Setting Name="ServerServices_ComunicacionDataTrack_VideoData" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://190.24.175.109:2998/VideoData.asmx</Value>
+    </Setting>
+    <Setting Name="ServerServices_ComunicacionDataTrack_CentroInformacion" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://190.24.175.109:2998/VideoData.asmx</Value>
+    </Setting>
+    <Setting Name="ServerServices_CDCTerpel_Integrator" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://172.16.3.12/Terpel.SecureService/Integrator.asmx</Value>
+    </Setting>
+    <Setting Name="ServerServices_ServicioMenoCash1_CentroInformacion" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://190.144.190.200/IntegracionServiceCore.svc</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

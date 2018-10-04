@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F731EE4F-BECB-470F-A9D7-5653A4C08330}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PosConfiguracion</RootNamespace>
+    <AssemblyName>PosConfiguracion</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <ApplicationIcon>ntwrk_321.ico</ApplicationIcon>
+    <StartupObject>PosConfiguracion.Program</StartupObject>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\Reglas Basicas.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\FullStationGonfig.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\Reglas Basicas.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\FullStationGonfig.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bonos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bonos.Designer.cs">
+      <DependentUpon>Bonos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClienteBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClienteBuscar.designer.cs">
+      <DependentUpon>ClienteBuscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configuracion.Designer.cs">
+      <DependentUpon>Configuracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Decimales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Decimales.Designer.cs">
+      <DependentUpon>Decimales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearch.Designer.cs">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmServicio.designer.cs">
+      <DependentUpon>frmServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsConfiguraLiquido.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsConfiguraLiquido.designer.cs">
+      <DependentUpon>gsConfiguraLiquido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsFormaPago.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsFormaPago.designer.cs">
+      <DependentUpon>gsFormaPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsProducto.designer.cs">
+      <DependentUpon>gsProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsTarjeta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsTarjeta.Designer.cs">
+      <DependentUpon>gsTarjeta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gsUnidadMedida.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="gsUnidadMedida.designer.cs">
+      <DependentUpon>gsUnidadMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lectores.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lectores.Designer.cs">
+      <DependentUpon>Lectores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtrosConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OtrosConfig.Designer.cs">
+      <DependentUpon>OtrosConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Bonos.resx">
+      <DependentUpon>Bonos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClienteBuscar.resx">
+      <DependentUpon>ClienteBuscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Configuracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Decimales.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Decimales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearch.resx">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmServicio.resx">
+      <DependentUpon>frmServicio.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsConfiguraLiquido.resx">
+      <DependentUpon>gsConfiguraLiquido.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsFormaPago.resx">
+      <DependentUpon>gsFormaPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsProducto.resx">
+      <DependentUpon>gsProducto.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsTarjeta.resx">
+      <DependentUpon>gsTarjeta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gsUnidadMedida.resx">
+      <DependentUpon>gsUnidadMedida.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lectores.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Lectores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtrosConfig.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OtrosConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SobreTasa.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SobreTasa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValidarUsuario.resx">
+      <DependentUpon>ValidarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visualizacion.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Visualizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SobreTasa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SobreTasa.Designer.cs">
+      <DependentUpon>SobreTasa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TitleStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ValidarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ValidarUsuario.designer.cs">
+      <DependentUpon>ValidarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visualizacion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Visualizacion.Designer.cs">
+      <DependentUpon>Visualizacion.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wiz_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about_321.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calc_322.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calc_3211.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_321.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exp_321.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fax_321.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flag_321.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\games_321.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group_322.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group_3211.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_321.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\impt_321.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lgicn_321.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_321.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ntwrk_321.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paint_323.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paint_3211.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paint_3221.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remov_322.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remov_3211.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smicn_242.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smicn_322.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smicn_2411.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smicn_3211.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tools_321.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_321.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wiz_321.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImagenInferior.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImagenSuperior.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FrameSup2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImagenCentro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bluefooter1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blueheader.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leftspine.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\top.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Otros.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lectores.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista_general.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info2_top.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info2_bottom.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\otros_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lectores_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ver_caras_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vista_general_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Left_logo8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ntwrk_321.ico" />
+    <None Include="Resources\IraVentanaConfiguracion.png" />
+    <None Include="Resources\Tarjeta32.png" />
+    <None Include="Resources\Tarjeta.png" />
+    <None Include="Resources\Unidades de Medidas.png" />
+    <None Include="Resources\Tarjeta11.png" />
+    <None Include="Resources\VistaGeneral.png" />
+    <None Include="Resources\Lectores.png" />
+    <None Include="Resources\Otros1.png" />
+    <None Include="Resources\Otros.png" />
+    <None Include="Resources\find.ico" />
+    <None Include="Resources\Caras.png" />
+    <None Include="Resources\Caras1.png" />
+    <None Include="Resources\ConfiguraciondeTanques1.png" />
+    <None Include="Resources\Cerrar.png" />
+    <None Include="Resources\ConfiguraciondeTanques.png" />
+    <None Include="Resources\EditarTarjeta.png" />
+    <None Include="Resources\EditarTarjeta32.png" />
+    <None Include="Resources\BarraInf.png" />
+    <None Include="Resources\Encabezado3.bmp" />
+    <None Include="Resources\Guardar %282%29.png" />
+    <None Include="Resources\Busqueda.png" />
+    <None Include="Resources\actualizar1.png" />
+    <None Include="Resources\Agregar11.png" />
+    <None Include="Resources\BarraInferior1.png" />
+    <Content Include="Resources\Iconos Full Station.png" />
+    <None Include="Resources\Tarjeta1.png" />
+    <None Include="Resources\guardar.png" />
+    <None Include="Resources\SobreTasa1.png" />
+    <None Include="Resources\SobreTasa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Controles\Controles.csproj">
+      <Project>{3ce73096-3699-44ae-83b8-280eedfff5ff}</Project>
+      <Name>Controles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FabricaPosColombia\HP_FabricaColombia.vbproj">
+      <Project>{34e43672-06aa-4800-8f2e-b61a6f4cbd77}</Project>
+      <Name>HP_FabricaColombia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GSTCriptografia1\GSTCriptografia1.vbproj">
+      <Project>{3184581b-c95e-4167-b1f9-85d2105ad9c6}</Project>
+      <Name>GSTCriptografia1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HelperPOSstation\HP_HelperPOSstation.vbproj">
+      <Project>{ca843156-ccfb-4e1b-aa61-1e8498a5877d}</Project>
+      <Name>HP_HelperPOSstation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JRINCCustomControls\JRINCCustomControls.csproj">
+      <Project>{c8b714bf-091d-4972-af18-6f6904fd0d8d}</Project>
+      <Name>JRINCCustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServerServices\ServerServices.vbproj">
+      <Project>{12E2FA73-690F-41D6-8392-7F48F6E08284}</Project>
+      <Name>ServerServices</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:schema="http://pgn.com.pe/pgn-network" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://pgn.com.pe/pgn-network" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <schema xmlns:pgn="http://pgn.com.pe/pgn-network" elementFormDefault="qualified" targetNamespace="http://pgn.com.pe/pgn-network" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="pgnSolicitudRequest">
+        <complexType>
+          <sequence>
+            <element name="solicitud" type="pgn:SolicitudType" />
+          </sequence>
+        </complexType>
+      </element>
+      <complexType name="SolicitudType">
+        <attribute name="codeManguera" type="string" />
+        <attribute name="codeCara" type="string" />
+        <attribute name="codeSurtidor" type="string" />
+        <attribute name="codeIsla" type="string" />
+        <attribute name="codeEstacion" type="string" />
+        <attribute name="serie" type="string" />
+        <attribute name="numero" type="string" />
+        <attribute name="codeSerialImpresora" type="string" />
+        <attribute name="codeTurnoHorario" type="string" />
+        <attribute name="fechaVenta" type="string" />
+        <attribute name="fechaProceso" type="string" />
+        <attribute name="fechaApertura" type="string" />
+        <attribute name="fechaLecturaInicio" type="string" />
+        <attribute name="fechaLecturaFin" type="string" />
+        <attribute name="lecturaInicio" type="string" />
+        <attribute name="lecturaFinal" type="string" />
+        <attribute name="ruc" type="string" />
+        <attribute name="producto" type="string" />
+        <attribute name="cantidad" type="string" />
+        <attribute name="precioUnitario" type="string" />
+        <attribute name="valorVenta" type="string" />
+        <attribute name="impuesto" type="string" />
+        <attribute name="precioVenta" type="string" />
+        <attribute name="recaudo" type="string" />
+        <attribute name="placa" type="string" />
+        <attribute name="recibo" type="string" />
+        <attribute name="reciboAnulado" type="string" />
+        <attribute name="online" type="string" />
+        <attribute name="codeTarjetaCliente" type="string" />
+        <attribute name="codeTarjetaEmpresa" type="string" />
+        <attribute name="codeValeCredito" type="string" />
+        <attribute name="codePromocionConsumo" type="string" />
+      </complexType>
+      <element name="pgnSolicitudResponse">
+        <complexType>
+          <sequence>
+            <element name="mensaje" type="pgn:MensajeType" />
+          </sequence>
+        </complexType>
+      </element>
+      <complexType name="MensajeType">
+        <attribute name="procesoOk" type="string" />
+        <attribute name="mensaje" type="string" />
+      </complexType>
+      <element name="pgnTarjetaRequest">
+        <complexType>
+          <sequence>
+            <element name="tarjeta" type="pgn:TarjetaType" />
+          </sequence>
+        </complexType>
+      </element>
+      <complexType name="TarjetaType">
+        <attribute name="placa" type="string" />
+        <attribute name="codeTarjeta" type="string" />
+      </complexType>
+      <element name="pgnTarjetaResponse">
+        <complexType>
+          <sequence>
+            <element name="respuesta" type="pgn:RespuestaType" />
+          </sequence>
+        </complexType>
+      </element>
+      <complexType name="RespuestaType">
+        <attribute name="esValida" type="string" />
+        <attribute name="mensaje" type="string" />
+      </complexType>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="pgnSolicitudResponse">
+    <wsdl:part name="pgnSolicitudResponse" element="schema:pgnSolicitudResponse" />
+  </wsdl:message>
+  <wsdl:message name="pgnSolicitudRequest">
+    <wsdl:part name="pgnSolicitudRequest" element="schema:pgnSolicitudRequest" />
+  </wsdl:message>
+  <wsdl:message name="pgnTarjetaRequest">
+    <wsdl:part name="pgnTarjetaRequest" element="schema:pgnTarjetaRequest" />
+  </wsdl:message>
+  <wsdl:message name="pgnTarjetaResponse">
+    <wsdl:part name="pgnTarjetaResponse" element="schema:pgnTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Clubpgn">
+    <wsdl:operation name="pgnSolicitud">
+      <wsdl:input name="pgnSolicitudRequest" message="schema:pgnSolicitudRequest" />
+      <wsdl:output name="pgnSolicitudResponse" message="schema:pgnSolicitudResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="pgnTarjeta">
+      <wsdl:input name="pgnTarjetaRequest" message="schema:pgnTarjetaRequest" />
+      <wsdl:output name="pgnTarjetaResponse" message="schema:pgnTarjetaResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClubpgnBinding" type="schema:Clubpgn">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="pgnSolicitud">
+      <soap:operation soapAction="" />
+      <wsdl:input name="pgnSolicitudRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="pgnSolicitudResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pgnTarjeta">
+      <soap:operation soapAction="" />
+      <wsdl:input name="pgnTarjetaRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="pgnTarjetaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClubpgnService">
+    <wsdl:port name="ClubpgnPort" binding="schema:ClubpgnBinding">
+      <soap:address location="http://localhost:18080/clubpgnws/clubpgn" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

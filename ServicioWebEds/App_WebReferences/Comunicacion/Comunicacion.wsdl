@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RegistrarInventarioProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigoProducto" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoTipoMovimiento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="documentoPedido" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarInventarioProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarInventarioProductoResult" type="tns:RespuestaInventario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaInventario">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Procesado" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="MensajeError" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RegistrarInventarioProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarInventarioProducto" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarInventarioProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarInventarioProductoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ComunicacionSoap">
+    <wsdl:operation name="RegistrarInventarioProducto">
+      <wsdl:input message="tns:RegistrarInventarioProductoSoapIn" />
+      <wsdl:output message="tns:RegistrarInventarioProductoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ComunicacionSoap" type="tns:ComunicacionSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegistrarInventarioProducto">
+      <soap:operation soapAction="http://tempuri.org/RegistrarInventarioProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ComunicacionSoap12" type="tns:ComunicacionSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegistrarInventarioProducto">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarInventarioProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Comunicacion">
+    <wsdl:port name="ComunicacionSoap" binding="tns:ComunicacionSoap">
+      <soap:address location="http://localhost:8689/ServicioWebEds/Comunicacion.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ComunicacionSoap12" binding="tns:ComunicacionSoap12">
+      <soap12:address location="http://localhost:8689/ServicioWebEds/Comunicacion.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
