@@ -78,6 +78,10 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FabricaProtocoloServicio, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\FabricaProtocoloServicio.dll</HintPath>
+    </Reference>
     <Reference Include="hasp_net_windows, Version=1.10.18.0, Culture=neutral, PublicKeyToken=56120be447701319">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\LIBS\hasp_net_windows.dll</HintPath>
@@ -199,12 +203,6 @@
     </None>
     <None Include="peru.pfx" />
     <None Include="POSstation.pfx" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\EncuestadorPos\SolutionEncuestadorPos\FabricaProtocolosVB\HP_FabricaProtocolosVB.vbproj">
-      <Project>{001BEF3C-26D3-4BB1-840E-0EF77F49A37C}</Project>
-      <Name>HP_FabricaProtocolosVB</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

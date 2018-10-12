@@ -173,6 +173,10 @@
       <Project>{35e69482-7d58-4da6-8c22-527ca7c2c842}</Project>
       <Name>HP_NormaColombiana</Name>
     </ProjectReference>
+    <ProjectReference Include="..\POS-Colombia\SICOM\SICOM.csproj">
+      <Project>{af17ffc4-2cb8-4a4a-99f3-3aa4fab7f230}</Project>
+      <Name>SICOM</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
